@@ -5,8 +5,12 @@ rule-based reward, a real LLM-as-judge reward (Claude Haiku 4.5), and a
 reward network distilled from the LLM's judgments, on a shared 2-D
 gridworld navigation task.
 
-Full write-up: [`report/report.pdf`](report/report.pdf) (4-page IEEE-format
-report, built from `report/report.tex`).
+Two write-ups of the same underlying study:
+- [`report/report.pdf`](report/report.pdf) — a 4-page IEEE-format
+  technical report, built from `report/report.tex`.
+- [`paper/paper.pdf`](paper/paper.pdf) — a fuller 5-page paper (Abstract,
+  Introduction, Previous Work, Novelty, Contribution, Experimental
+  Setup, Results and Analysis, Conclusion), built from `paper/paper.tex`.
 
 ## What's here
 
@@ -34,7 +38,8 @@ src/                  shared modules: gridworld, rule policy, NN policy,
 experiments/          e1_rule_llm.py, e2_rule_llm_nl.py,
                        e3_nn_llm_nl.py, e4_reward_model.py
 results/<e1..e4>/     records.json + summary.json from each run
-report/               report.tex, references.bib, report.pdf, figures/
+report/               4-page IEEE report: report.tex, references.bib, report.pdf, figures/
+paper/                5-page paper: paper.tex, references.bib, paper.pdf, figures/
 run_all.py            runs E1-E4 in order
 ```
 
