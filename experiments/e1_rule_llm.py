@@ -1,8 +1,9 @@
 """E1 - rule-based ("software") policy vs. LLM judge, no natural-language
-instruction. For a sample of grid cells, roll the rule-based policy
-forward a few steps, then ask both the software rubric and a real LLM
-judge to score that same situation and propose an action-probability
-distribution over the four moves. Compare the two.
+instruction. Every eligible grid cell is rolled out several independent
+times ("replicates") to reach a statistically reasonable sample size from
+a small map, then both the software rubric and a real LLM judge score
+that same situation and propose an action-probability distribution over
+the four moves. Compare the two.
 """
 from __future__ import annotations
 
@@ -23,32 +24,39 @@ import state_sampler as ss
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e1")
 FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
-N_CELLS = 10
+REPLICATES = 4  # 16 eligible cells x 4 replicates = 64 situations
 RUBRIC_FIELDS = ["closeness", "avoided_damage", "path_efficiency"]
 
 
 def run():
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(FIG_DIR, exist_ok=True)
-    cells = ss.sample_cells(N_CELLS)
-    rng = np.random.default_rng(7)
+    situations = ss.build_situations(rp.action_probs, replicates=REPLICATES, seed_base=1)
+    print(f"E1: {len(situations)} situations "
+          f"({len(ss.eligible_cells())} cells x {REPLICATES} replicates)")
 
     records = []
-    for start in cells:
-        state = ss.partial_rollout(rp.action_probs, start, rng)
+    n_failed = 0
+    for k, state in enumerate(situations):
         cur, steps, hits = state["cur"], state["steps_taken"], state["obstacle_hits"]
+        start = state["start"]
 
         rule_probs = rp.action_probs(cur)
         sw_rubric = rp.state_rubric(start, cur, steps, hits)
 
-        llm_out = lj.judge(cur, g.TARGET, instruction=None, obstacle_hits=hits,
-                            steps_taken=steps)
+        try:
+            llm_out = lj.judge(cur, g.TARGET, instruction=None, obstacle_hits=hits,
+                                steps_taken=steps)
+        except Exception as e:  # noqa: BLE001
+            print(f"[{k+1}/{len(situations)}] SKIPPED (judge failed: {e})")
+            n_failed += 1
+            continue
         llm_probs = lj.probs_array(llm_out)
 
         rec = {
             "start": start, "cur": cur, "steps_taken": steps, "obstacle_hits": hits,
             "rule_probs": rule_probs.tolist(), "llm_probs": llm_probs.tolist(),
-            "sw_rubric": sw_rubric, "llm_rubric": {k: llm_out[k] for k in
+            "sw_rubric": sw_rubric, "llm_rubric": {k2: llm_out[k2] for k2 in
                 ["reached_target", "closeness", "avoided_damage", "path_efficiency"]},
             "llm_reasoning": llm_out["reasoning"], "latency_s": llm_out["_latency_s"],
             "js_div": met.js_divergence(rule_probs, llm_probs),
@@ -57,15 +65,27 @@ def run():
             "rubric_mae": met.rubric_mae(sw_rubric, llm_out, RUBRIC_FIELDS),
         }
         records.append(rec)
-        print(f"cell={cur} steps={steps} hits={hits} JS={rec['js_div']:.3f} "
-              f"agree={rec['argmax_agree']} rubric_MAE={rec['rubric_mae']:.3f}")
+        if (k + 1) % 8 == 0 or k == len(situations) - 1:
+            print(f"[{k+1}/{len(situations)}] cell={cur} steps={steps} hits={hits} "
+                  f"JS={rec['js_div']:.3f} agree={rec['argmax_agree']}")
+            with open(os.path.join(OUT_DIR, "records.json"), "w") as f:
+                json.dump(records, f, indent=2, default=str)
+
+    if n_failed:
+        print(f"{n_failed} situation(s) skipped after exhausting retries")
+    n = len(records)
+    n_agree = int(sum(r["argmax_agree"] for r in records))
+    agree_lo, agree_hi = met.wilson_ci(n_agree, n)
+    js_mean, js_lo, js_hi = met.mean_ci([r["js_div"] for r in records])
+    mae_mean, mae_lo, mae_hi = met.mean_ci([r["rubric_mae"] for r in records])
 
     summary = {
-        "n_cells": N_CELLS,
-        "mean_js_div": float(np.mean([r["js_div"] for r in records])),
+        "n_situations": n, "n_failed": n_failed,
+        "n_cells": len(ss.eligible_cells()), "replicates": REPLICATES,
+        "mean_js_div": js_mean, "js_div_ci95": [js_lo, js_hi],
         "mean_cosine_sim": float(np.mean([r["cosine_sim"] for r in records])),
-        "argmax_agreement_rate": float(np.mean([r["argmax_agree"] for r in records])),
-        "mean_rubric_mae": float(np.mean([r["rubric_mae"] for r in records])),
+        "argmax_agreement_rate": n_agree / n, "argmax_agreement_ci95": [agree_lo, agree_hi],
+        "mean_rubric_mae": mae_mean, "rubric_mae_ci95": [mae_lo, mae_hi],
         "mean_llm_latency_s": float(np.mean([r["latency_s"] for r in records])),
     }
     print("SUMMARY", json.dumps(summary, indent=2))
@@ -82,17 +102,18 @@ def run():
                            "Rule-based policy", "LLM judge",
                            os.path.join(FIG_DIR, "e1_action_field.png"))
 
-    labels = [str(r["cur"]) for r in records]
-    viz.bar_overlay(labels, {
-        "software closeness": [r["sw_rubric"]["closeness"] for r in records],
-        "LLM closeness": [r["llm_rubric"]["closeness"] for r in records],
-    }, "closeness score", "E1: software vs. LLM closeness rubric",
+    viz.scatter_calibration(
+        [r["sw_rubric"]["closeness"] for r in records],
+        [r["llm_rubric"]["closeness"] for r in records],
+        "software closeness", "LLM closeness",
+        f"E1: closeness rubric calibration (n={n})",
         os.path.join(FIG_DIR, "e1_rubric_closeness.png"))
 
-    viz.bar_overlay(labels, {
-        "software path_efficiency": [r["sw_rubric"]["path_efficiency"] for r in records],
-        "LLM path_efficiency": [r["llm_rubric"]["path_efficiency"] for r in records],
-    }, "path efficiency score", "E1: software vs. LLM path-efficiency rubric",
+    viz.scatter_calibration(
+        [r["sw_rubric"]["path_efficiency"] for r in records],
+        [r["llm_rubric"]["path_efficiency"] for r in records],
+        "software path efficiency", "LLM path efficiency",
+        f"E1: path-efficiency rubric calibration (n={n})",
         os.path.join(FIG_DIR, "e1_rubric_efficiency.png"))
 
     return records, summary

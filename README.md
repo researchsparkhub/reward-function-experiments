@@ -15,20 +15,25 @@ Two write-ups of the same underlying study:
 ## What's here
 
 - **E1** — rule-based policy vs. a single-shot LLM judge, no instruction.
+  64 situations.
 - **E2** — same, plus a natural-language instruction and iterative
   refinement (the judge is told how far its action distribution is from
-  the reference policy and re-asked, up to 4 rounds).
+  the reference policy and re-asked, up to 4 rounds). 64 situations.
 - **E3** — same protocol as E2, but the reference policy is a small
   REINFORCE-trained neural network (72% success rate) instead of the
-  near-optimal rule.
+  near-optimal rule. 64 situations.
 - **E4** — a small MLP regressor distilled from every (situation, LLM
-  rubric) pair produced in E1-E3, evaluated against fresh real LLM calls
-  on held-out situations.
+  rubric) pair produced in E1-E3 (258 pairs), evaluated against 48
+  fresh, held-out real LLM calls.
 
 Every LLM call across E1-E4 is a real call to the Anthropic API
 (`claude-haiku-4-5-20251001`) with a structured tool-use schema for the
 rubric + action-probability output — there is no mocked judge in this
-codebase.
+codebase. E1-E3 each evaluate every one of the map's 16 eligible grid
+cells, replicated 3-4 times with independent stochastic rollouts (rather
+than a handful of once-sampled cells), and every summary number is
+reported with a 95% confidence interval — see `src/state_sampler.py` and
+`src/metrics.py`.
 
 ## Layout
 
@@ -74,14 +79,18 @@ back.
 
 ## Results summary
 
+n=64 situations for E1-E3, n=48 held-out situations for E4 (258 training
+pairs pooled from E1-E3); brackets are 95% confidence intervals.
+
 | Exp. | Reference policy | Instruction | Mean iters. | Final JS div. | Argmax agreement | Rubric MAE |
 |---|---|---|---|---|---|---|
-| E1 | Rule-based | No | 1 (single-shot) | 0.151 | 0.80 | 0.097 |
-| E2 | Rule-based | Yes | 1.3 / 4 | 0.019 | 1.00 | 0.052 |
-| E3 | Neural network (72% success) | Yes | 1.8 / 4 | 0.043 | 0.70 | 0.118 |
-| E4 | Distilled reward net vs. LLM | Yes (train.) | - | 0.188 | 0.25 | 0.076 |
+| E1 | Rule-based | No | 1 (single-shot) | 0.095 [0.06,0.13] | 0.78 [0.67,0.87] | 0.053 [0.04,0.06] |
+| E2 | Rule-based | Yes | 1.34 / 4 | 0.017 [0.01,0.02] | 1.00 [0.94,1.00] | 0.056 [0.04,0.07] |
+| E3 | Neural network (72% success) | Yes | 1.69 / 4 | 0.011 [0.01,0.01] | 0.86 [0.75,0.92] | 0.114 [0.09,0.14] |
+| E4 | Distilled reward net vs. LLM | Yes (train.) | - | 0.232 [0.20,0.26] | 0.48 [0.34,0.62] | 0.058 [0.05,0.07] |
 
-E4's reward network also runs ~2300x faster than a real LLM judge call
-(1.1ms vs. 2.56s) while reproducing its rubric scores closely but its
-specific best-action choice only 25% of the time — see the report's
-Discussion for why that gap matters.
+E4's reward network also runs ~1800x faster (median) than a real LLM
+judge call (2.4ms vs. 2.44s) while reproducing its rubric scores closely
+but its specific best-action choice only 48% of the time — up from 25%
+in a smaller 41-pair pilot run, but still well short of parity — see the
+paper's Discussion for why that gap matters.

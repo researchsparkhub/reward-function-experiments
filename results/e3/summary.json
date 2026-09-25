@@ -1,13 +1,36 @@
 {
-  "n_cells": 10,
+  "n_situations": 64,
+  "n_failed": 0,
+  "n_cells": 16,
+  "replicates": 4,
   "max_iters": 4,
   "tol": 0.05,
-  "mean_iterations": 1.8,
-  "convergence_rate": 0.9,
-  "mean_final_js_div": 0.043458123023465675,
-  "mean_final_cosine_sim_vs_nn": 0.921470412220723,
-  "mean_final_cosine_sim_vs_rule": 0.7989770479494342,
-  "final_argmax_agreement_vs_nn": 0.7,
-  "mean_final_rubric_mae": 0.11846333333333332,
-  "mean_total_latency_s": 7.11950716972351
+  "mean_iterations": 1.6875,
+  "iterations_ci95": [
+    1.508178361595707,
+    1.866821638404293
+  ],
+  "convergence_rate": 1.0,
+  "convergence_ci95": [
+    0.9433739770288436,
+    1.0
+  ],
+  "mean_final_js_div": 0.010890267838663158,
+  "final_js_div_ci95": [
+    0.008184580786780875,
+    0.013595954890545442
+  ],
+  "mean_final_cosine_sim_vs_nn": 0.9926104397501787,
+  "mean_final_cosine_sim_vs_rule": 0.7683572894327991,
+  "final_argmax_agreement_vs_nn": 0.859375,
+  "final_argmax_agreement_vs_nn_ci95": [
+    0.7538349160536257,
+    0.9242151299358556
+  ],
+  "mean_final_rubric_mae": 0.11359479166666667,
+  "final_rubric_mae_ci95": [
+    0.08934589509993818,
+    0.13784368823339516
+  ],
+  "mean_total_latency_s": 6.495312072336674
 }

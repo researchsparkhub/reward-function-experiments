@@ -2,6 +2,698 @@
   {
     "start": [
       1,
+      1
+    ],
+    "cur": [
+      1,
+      4
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.0031000130640371788,
+      0.0539765224635172,
+      0.0031000130640371788,
+      0.9398234514084085
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.2857,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.5837255018162169,
+      0.014189198772163281
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.57,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.5,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.6
+      }
+    ],
+    "final_probs": [
+      0.01,
+      0.04,
+      0.05,
+      0.9
+    ],
+    "final_rubric": {
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.6
+    },
+    "final_rubric_mae": 0.20476666666666668,
+    "final_cosine_sim": 0.9985264345603819,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 8.650284051895142
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.10517040588044659,
+      0.01133352687712565
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.5,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.01,
+      0.94,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.07380000000000002,
+    "final_cosine_sim": 0.9989130268275728,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 6.601126194000244
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      1,
+      2
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.2857,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.3333
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.42286273785479517,
+      0.011565984954011337
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.75
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.35,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.65
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.92,
+      0.03,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.35,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.65
+    },
+    "final_rubric_mae": 0.127,
+    "final_cosine_sim": 0.9990950576144418,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 8.823032140731812
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.17727988296565728,
+      0.016920737805544976
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.04,
+      0.92,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.08286666666666669,
+    "final_cosine_sim": 0.9983907351406932,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 6.487745046615601
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.06335784300096427,
+      0.004498722083526387
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.01,
+      0.92,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04286666666666664,
+    "final_cosine_sim": 0.9997972553830426,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 6.721267938613892
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.06110385602601838,
+      0.009135769047545442
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.03,
+      0.0,
+      0.94,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.09286666666666665,
+    "final_cosine_sim": 0.9992617166826296,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.444982051849365
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.2393407658650975,
+      0.008651900417286985
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.03,
+      0.02,
+      0.93,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.4,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.10713333333333334,
+    "final_cosine_sim": 0.9993535678749953,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 5.9795708656311035
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.12498250947284956,
+      0.010955037269185581
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.65,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.57,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.02,
+      0.94,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.57,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.050466666666666694,
+    "final_cosine_sim": 0.9990259174903988,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.542204856872559
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.019202610098224018
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.86,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.86,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.04856666666666665,
+    "final_cosine_sim": 0.9983548159918225,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.221578359603882
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.019202610098224018
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.85,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.07856666666666663,
+    "final_cosine_sim": 0.9983548159918225,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.6871798038482666
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.020788990575095118
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.9,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.45,
+      0.45,
+      0.1
+    ],
+    "final_rubric": {
+      "closeness": 0.9,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.07856666666666667,
+    "final_cosine_sim": 0.992546775893028,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.1671600341796875
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.003715531161899179
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.87,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.45,
+      0.45,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.87,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.08523333333333331,
+    "final_cosine_sim": 0.9985805504708983,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.4112489223480225
+  },
+  {
+    "start": [
+      1,
       4
     ],
     "cur": [
@@ -26,69 +718,256 @@
     "iterations_used": 2,
     "converged": true,
     "js_div_per_iter": [
-      0.15182546976993117,
-      0.016920737805544976
+      0.10517040588044659,
+      0.011333526877125646
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.03,
+      0.94,
+      0.01
+    ],
+    "final_rubric": {
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "final_rubric_mae": 0.07619999999999998,
+    "final_cosine_sim": 0.9989130268275728,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 5.584863185882568
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.10517040588044659,
+      0.010955037269185581
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.02,
+      0.94,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.0662,
+    "final_cosine_sim": 0.9990259174903988,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.387057065963745
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.06335784300096427,
+      0.01133352687712565
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.5,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.01,
+      0.94,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.0662,
+    "final_cosine_sim": 0.9989130268275728,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 6.937321186065674
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.06335784300096427,
+      0.010955037269185581
     ],
     "rubric_per_iter": [
       {
         "reached_target": 0.0,
         "closeness": 0.6,
         "avoided_damage": 1.0,
-        "path_efficiency": 0.85
+        "path_efficiency": 0.8
       },
       {
         "reached_target": 0.0,
-        "closeness": 0.6,
+        "closeness": 0.4,
         "avoided_damage": 1.0,
         "path_efficiency": 0.85
       }
     ],
     "final_probs": [
       0.02,
-      0.04,
-      0.92,
+      0.02,
+      0.94,
       0.02
     ],
     "final_rubric": {
-      "closeness": 0.6,
+      "closeness": 0.4,
       "avoided_damage": 1.0,
       "path_efficiency": 0.85
     },
-    "final_rubric_mae": 0.05953333333333333,
-    "final_cosine_sim": 0.9983907351406932,
+    "final_rubric_mae": 0.10713333333333334,
+    "final_cosine_sim": 0.9990259174903988,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 6.535691976547241
+    "total_latency_s": 6.892389297485352
   },
   {
     "start": [
-      6,
-      3
+      1,
+      5
     ],
     "cur": [
-      6,
-      4
+      2,
+      3
     ],
-    "steps_taken": 1,
+    "steps_taken": 3,
     "obstacle_hits": 0,
-    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
     "rule_probs": [
-      0.8943233986127138,
-      0.05136333525464558,
-      0.002949930877995047,
-      0.05136333525464558
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
     ],
     "sw_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.7143,
+      "closeness": 0.5714,
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
-    "iterations_used": 1,
+    "iterations_used": 2,
     "converged": true,
     "js_div_per_iter": [
-      0.038099275792519996
+      0.06110385602601838,
+      0.004942363146001901
     ],
     "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
       {
         "reached_target": 0.0,
         "closeness": 0.75,
@@ -97,25 +976,85 @@
       }
     ],
     "final_probs": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
+      0.04,
+      0.01,
+      0.93,
+      0.02
     ],
     "final_rubric": {
       "closeness": 0.75,
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
-    "final_rubric_mae": 0.011899999999999985,
-    "final_cosine_sim": 0.996712338614066,
+    "final_rubric_mae": 0.05953333333333333,
+    "final_cosine_sim": 0.9997034289814362,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 2.786907911300659
+    "total_latency_s": 6.10000205039978
   },
   {
     "start": [
       1,
-      1
+      5
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.06335784300096427,
+      0.01133352687712565
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.65,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.5,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.01,
+      0.94,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.057133333333333335,
+    "final_cosine_sim": 0.9989130268275728,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 5.4612603187561035
+  },
+  {
+    "start": [
+      1,
+      5
     ],
     "cur": [
       2,
@@ -136,94 +1075,94 @@
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.044119932433771235
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04286666666666664,
+    "final_cosine_sim": 0.990999020470738,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.7373619079589844
+  },
+  {
+    "start": [
+      1,
+      5
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
     "iterations_used": 2,
     "converged": true,
     "js_div_per_iter": [
       0.06110385602601838,
-      0.0022283740866083325
+      0.004942363146001901
     ],
     "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
       {
         "reached_target": 0.0,
         "closeness": 0.67,
         "avoided_damage": 1.0,
-        "path_efficiency": 0.75
-      },
-      {
-        "reached_target": 0.0,
-        "closeness": 0.5,
-        "avoided_damage": 1.0,
-        "path_efficiency": 0.9
+        "path_efficiency": 0.92
       }
     ],
     "final_probs": [
-      0.06,
-      0.0,
-      0.94,
-      0.0
+      0.04,
+      0.01,
+      0.93,
+      0.02
     ],
     "final_rubric": {
-      "closeness": 0.5,
+      "closeness": 0.67,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.9
+      "path_efficiency": 0.92
     },
-    "final_rubric_mae": 0.057133333333333335,
-    "final_cosine_sim": 0.999968843968499,
+    "final_rubric_mae": 0.05953333333333333,
+    "final_cosine_sim": 0.9997034289814362,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 7.763484001159668
-  },
-  {
-    "start": [
-      2,
-      3
-    ],
-    "cur": [
-      3,
-      3
-    ],
-    "steps_taken": 1,
-    "obstacle_hits": 0,
-    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
-    "rule_probs": [
-      0.027156633066320313,
-      0.4728433669336797,
-      0.4728433669336797,
-      0.027156633066320313
-    ],
-    "sw_rubric": {
-      "reached_target": 0.0,
-      "closeness": 0.7143,
-      "avoided_damage": 1.0,
-      "path_efficiency": 1.0
-    },
-    "iterations_used": 1,
-    "converged": true,
-    "js_div_per_iter": [
-      0.019202610098224018
-    ],
-    "rubric_per_iter": [
-      {
-        "reached_target": 0.0,
-        "closeness": 0.5,
-        "avoided_damage": 1.0,
-        "path_efficiency": 0.9
-      }
-    ],
-    "final_probs": [
-      0.0,
-      0.5,
-      0.5,
-      0.0
-    ],
-    "final_rubric": {
-      "closeness": 0.5,
-      "avoided_damage": 1.0,
-      "path_efficiency": 0.9
-    },
-    "final_rubric_mae": 0.10476666666666667,
-    "final_cosine_sim": 0.9983548159918225,
-    "final_argmax_agree": 1.0,
-    "total_latency_s": 2.503648042678833
+    "total_latency_s": 5.9873881340026855
   },
   {
     "start": [
@@ -252,47 +1191,425 @@
     "iterations_used": 1,
     "converged": true,
     "js_div_per_iter": [
-      0.0010360189226027948
+      0.014955975056145106
     ],
     "rubric_per_iter": [
       {
         "reached_target": 0.0,
-        "closeness": 0.2,
+        "closeness": 0.5,
         "avoided_damage": 1.0,
-        "path_efficiency": 0.9
+        "path_efficiency": 0.75
       }
     ],
     "final_probs": [
       0.0,
-      0.05,
-      0.9,
+      0.15,
+      0.8,
       0.05
     ],
     "final_rubric": {
-      "closeness": 0.2,
+      "closeness": 0.5,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.9
+      "path_efficiency": 0.75
     },
-    "final_rubric_mae": 0.10953333333333332,
-    "final_cosine_sim": 0.99999111683673,
+    "final_rubric_mae": 0.10713333333333334,
+    "final_cosine_sim": 0.9918370422800862,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 2.602290153503418
+    "total_latency_s": 4.735573053359985
   },
   {
     "start": [
-      6,
-      5
+      1,
+      6
     ],
     "cur": [
-      6,
-      4
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.01795411504194116
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.4,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.05953333333333333,
+    "final_cosine_sim": 0.9960462165358909,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.2599358558654785
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.01795411504194116
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.5,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "final_rubric_mae": 0.09046666666666665,
+    "final_cosine_sim": 0.9960462165358909,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.632791757583618
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.21820703743615302,
+      0.005411523699733252
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.08,
+      0.85,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.4,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.05953333333333333,
+    "final_cosine_sim": 0.9991347728621298,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.430609941482544
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.019202610098224018
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.85,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.04523333333333331,
+    "final_cosine_sim": 0.9983548159918225,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.9709770679473877
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      3,
+      3
     ],
     "steps_taken": 1,
     "obstacle_hits": 0,
     "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
     "rule_probs": [
-      0.8943233986127138,
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.003715531161899179
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.45,
+      0.45,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04523333333333331,
+    "final_cosine_sim": 0.9985805504708983,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.5678532123565674
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.003715531161899179
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.8,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.45,
+      0.45,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.8,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.06189999999999999,
+    "final_cosine_sim": 0.9985805504708983,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.433600902557373
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.002949930877995047,
       0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.01795411504194116
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.35,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.35,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.0762,
+    "final_cosine_sim": 0.9960462165358909,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.353937864303589
+  },
+  {
+    "start": [
+      3,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
       0.002949930877995047,
       0.05136333525464558
     ],
@@ -305,107 +1622,107 @@
     "iterations_used": 1,
     "converged": true,
     "js_div_per_iter": [
-      0.008566832620557983
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.9967123386140659,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.0241310596466064
+  },
+  {
+    "start": [
+      3,
+      1
+    ],
+    "cur": [
+      3,
+      1
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.0016438306929670045,
+      0.49835616930703297,
+      0.49835616930703297,
+      0.0016438306929670045
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.10274641871451054,
+      0.001140755304014416
     ],
     "rubric_per_iter": [
       {
         "reached_target": 0.0,
-        "closeness": 0.75,
+        "closeness": 0.42,
         "avoided_damage": 1.0,
-        "path_efficiency": 0.95
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.4,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
       }
     ],
     "final_probs": [
-      0.95,
-      0.02,
-      0.01,
-      0.02
+      0.0,
+      0.5,
+      0.5,
+      0.0
     ],
     "final_rubric": {
-      "closeness": 0.75,
+      "closeness": 0.4,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.95
+      "path_efficiency": 0.8
     },
-    "final_rubric_mae": 0.028566666666666667,
-    "final_cosine_sim": 0.9986593884207197,
+    "final_rubric_mae": 0.2762,
+    "final_cosine_sim": 0.9999945599742801,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 2.933349847793579
+    "total_latency_s": 7.0157811641693115
   },
   {
     "start": [
-      6,
+      3,
       1
     ],
     "cur": [
-      6,
-      3
+      4,
+      2
     ],
     "steps_taken": 2,
     "obstacle_hits": 0,
     "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
     "rule_probs": [
-      0.003100013064037178,
-      0.9398234514084084,
-      0.003100013064037178,
-      0.05397652246351719
-    ],
-    "sw_rubric": {
-      "reached_target": 0.0,
-      "closeness": 0.5714,
-      "avoided_damage": 1.0,
-      "path_efficiency": 1.0
-    },
-    "iterations_used": 2,
-    "converged": true,
-    "js_div_per_iter": [
-      0.4286699621902095,
-      0.01382391287397985
-    ],
-    "rubric_per_iter": [
-      {
-        "reached_target": 0.0,
-        "closeness": 0.75,
-        "avoided_damage": 1.0,
-        "path_efficiency": 0.9
-      },
-      {
-        "reached_target": 0.0,
-        "closeness": 0.75,
-        "avoided_damage": 1.0,
-        "path_efficiency": 0.85
-      }
-    ],
-    "final_probs": [
-      0.05,
-      0.9,
-      0.0,
-      0.05
-    ],
-    "final_rubric": {
-      "closeness": 0.75,
-      "avoided_damage": 1.0,
-      "path_efficiency": 0.85
-    },
-    "final_rubric_mae": 0.10953333333333333,
-    "final_cosine_sim": 0.99863488914995,
-    "final_argmax_agree": 1.0,
-    "total_latency_s": 6.308626890182495
-  },
-  {
-    "start": [
-      6,
-      2
-    ],
-    "cur": [
-      6,
-      4
-    ],
-    "steps_taken": 2,
-    "obstacle_hits": 0,
-    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
-    "rule_probs": [
-      0.8943233986127138,
       0.05136333525464558,
+      0.8943233986127138,
       0.002949930877995047,
       0.05136333525464558
     ],
@@ -429,8 +1746,8 @@
       }
     ],
     "final_probs": [
-      1.0,
       0.0,
+      1.0,
       0.0,
       0.0
     ],
@@ -440,9 +1757,62 @@
       "path_efficiency": 1.0
     },
     "final_rubric_mae": 0.011899999999999985,
-    "final_cosine_sim": 0.996712338614066,
+    "final_cosine_sim": 0.9967123386140659,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 3.1182498931884766
+    "total_latency_s": 3.155179023742676
+  },
+  {
+    "start": [
+      3,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.027665861256739633
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.99,
+      0.0,
+      0.01
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.028566666666666667,
+    "final_cosine_sim": 0.9972396857318206,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.92411208152771
   },
   {
     "start": [
@@ -495,7 +1865,219 @@
     "final_rubric_mae": 0.011899999999999985,
     "final_cosine_sim": 0.9967123386140659,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 2.201219081878662
+    "total_latency_s": 2.715243101119995
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.019202610098224018
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04523333333333331,
+    "final_cosine_sim": 0.9983548159918225,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.810184955596924
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.011130605886851351
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.85,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.475,
+      0.475,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.07856666666666663,
+    "final_cosine_sim": 0.9986101999456127,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.5602869987487793
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.003715531161899179
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.8,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.45,
+      0.45,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.8,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.04523333333333335,
+    "final_cosine_sim": 0.9985805504708983,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 6.031726121902466
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      3,
+      5
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.0016006482921935709,
+      0.02787002077573843,
+      0.485264665466034,
+      0.485264665466034
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.018021539420775366
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.05,
+      0.5,
+      0.4
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04523333333333331,
+    "final_cosine_sim": 0.9903923344823485,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 4.145779848098755
   },
   {
     "start": [
@@ -524,7 +2106,173 @@
     "iterations_used": 1,
     "converged": true,
     "js_div_per_iter": [
+      0.018021539420775366
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.875,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.05,
+      0.5,
+      0.4
+    ],
+    "final_rubric": {
+      "closeness": 0.875,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.08689999999999998,
+    "final_cosine_sim": 0.9903923344823485,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 4.45386004447937
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      3,
+      5
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.0016006482921935709,
+      0.02787002077573843,
+      0.485264665466034,
+      0.485264665466034
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.1579441483401167,
+      0.004972904362765379
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.88,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.85,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.02,
+      0.48,
+      0.48
+    ],
+    "final_rubric": {
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.06189999999999999,
+    "final_cosine_sim": 0.9995705586443311,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 8.845139503479004
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      3,
+      5
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.0016006482921935709,
+      0.02787002077573843,
+      0.485264665466034,
+      0.485264665466034
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
       0.010323932368126454
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.85,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.0,
+      0.0,
+      0.5,
+      0.5
+    ],
+    "final_rubric": {
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.06189999999999999,
+    "final_cosine_sim": 0.9991736788654874,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.027977228164673
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
     ],
     "rubric_per_iter": [
       {
@@ -536,9 +2284,9 @@
     ],
     "final_probs": [
       0.0,
+      1.0,
       0.0,
-      0.5,
-      0.5
+      0.0
     ],
     "final_rubric": {
       "closeness": 0.75,
@@ -546,8 +2294,1255 @@
       "path_efficiency": 1.0
     },
     "final_rubric_mae": 0.011899999999999985,
-    "final_cosine_sim": 0.9991736788654874,
+    "final_cosine_sim": 0.9967123386140659,
     "final_argmax_agree": 1.0,
-    "total_latency_s": 3.7982420921325684
+    "total_latency_s": 2.3277790546417236
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.9967123386140659,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.915137767791748
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.012789084791287321
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.8,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.96,
+      0.01,
+      0.01
+    ],
+    "final_rubric": {
+      "closeness": 0.8,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.04523333333333335,
+    "final_cosine_sim": 0.9982105683788828,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.5568888187408447
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.9967123386140659,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 4.697200775146484
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.48229884220299973,
+      0.004577077250754914
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.93,
+      0.0,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.032866666666666676,
+    "final_cosine_sim": 0.9998226752265679,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.27374005317688
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.37659435106422523,
+      0.01789873604344836
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.6,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      }
+    ],
+    "final_probs": [
+      0.05,
+      0.9,
+      0.02,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "final_rubric_mae": 0.07619999999999998,
+    "final_cosine_sim": 0.9981727124512975,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.402446269989014
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.5518865114719856,
+      0.004498722083526387
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      }
+    ],
+    "final_probs": [
+      0.02,
+      0.92,
+      0.01,
+      0.05
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "final_rubric_mae": 0.08286666666666669,
+    "final_cosine_sim": 0.9997972553830426,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 8.440736770629883
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 2,
+    "converged": true,
+    "js_div_per_iter": [
+      0.48637366557710665,
+      0.012109029881809126
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.65,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.85
+      },
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.8
+      }
+    ],
+    "final_probs": [
+      0.04,
+      0.92,
+      0.01,
+      0.03
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "final_rubric_mae": 0.12619999999999998,
+    "final_cosine_sim": 0.9988596718042213,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 7.9876909255981445
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.996712338614066,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.1834049224853516
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.421140193939209
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.1720709800720215
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.95
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "final_rubric_mae": 0.028566666666666667,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.945897102355957
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.996712338614066,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.1245670318603516
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.026536859026361336
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.99,
+      0.005,
+      0.003,
+      0.002
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.997107725846977,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.422168731689453
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.4333269596099854
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.626221179962158
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.9097630977630615
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.006088403323425191
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.025,
+      0.0,
+      0.025
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9990335581073286,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.218773126602173
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.01725641776600714
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.98,
+      0.01,
+      0.0,
+      0.01
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.9977766930600224,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.53994083404541
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.996712338614066,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.065727949142456
+  },
+  {
+    "start": [
+      6,
+      6
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Go to the sofa. Avoid bumping into walls and take the shortest path you can.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.011899999999999985,
+    "final_cosine_sim": 0.996712338614066,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.9178659915924072
+  },
+  {
+    "start": [
+      6,
+      6
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Move toward the sofa as directly as possible without hitting obstacles.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.75,
+        "avoided_damage": 1.0,
+        "path_efficiency": 0.9
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "final_rubric_mae": 0.04523333333333331,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 2.9297878742218018
+  },
+  {
+    "start": [
+      6,
+      6
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Reach the sofa, staying away from the chair and the cube on the way.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.008566832620557983
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.67,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "final_rubric": {
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.01476666666666667,
+    "final_cosine_sim": 0.9986593884207197,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.389727830886841
+  },
+  {
+    "start": [
+      6,
+      6
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "instruction": "Navigate to the sofa efficiently; try not to waste moves walking into walls.",
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "iterations_used": 1,
+    "converged": true,
+    "js_div_per_iter": [
+      0.038099275792519996
+    ],
+    "rubric_per_iter": [
+      {
+        "reached_target": 0.0,
+        "closeness": 0.66,
+        "avoided_damage": 1.0,
+        "path_efficiency": 1.0
+      }
+    ],
+    "final_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "final_rubric": {
+      "closeness": 0.66,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "final_rubric_mae": 0.018100000000000005,
+    "final_cosine_sim": 0.996712338614066,
+    "final_argmax_agree": 1.0,
+    "total_latency_s": 3.1611521244049072
   }
 ]

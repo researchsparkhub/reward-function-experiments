@@ -1,8 +1,25 @@
 {
-  "n_cells": 10,
-  "mean_js_div": 0.15115843763775338,
-  "mean_cosine_sim": 0.8046323750918403,
-  "argmax_agreement_rate": 0.8,
-  "mean_rubric_mae": 0.09696333333333333,
-  "mean_llm_latency_s": 2.7012364625930787
+  "n_situations": 64,
+  "n_cells": 16,
+  "replicates": 4,
+  "mean_js_div": 0.09467149903314814,
+  "js_div_ci95": [
+    0.061749152730817373,
+    0.1275938453354789
+  ],
+  "mean_cosine_sim": 0.8777265124179197,
+  "argmax_agreement_rate": 0.78125,
+  "argmax_agreement_ci95": [
+    0.6656698366922221,
+    0.8649780253865025
+  ],
+  "mean_rubric_mae": 0.05294583333333332,
+  "rubric_mae_ci95": [
+    0.043553698151782824,
+    0.06233796851488381
+  ],
+  "mean_llm_latency_s": 6.3235704861581326,
+  "median_llm_latency_s": 2.470410466194153,
+  "max_llm_latency_s": 240.09688186645508,
+  "n_latency_outliers_gt15s": 1
 }

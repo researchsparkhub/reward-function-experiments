@@ -1,12 +1,34 @@
 {
-  "n_cells": 10,
+  "n_situations": 64,
+  "n_cells": 16,
+  "replicates": 4,
   "max_iters": 4,
   "tol": 0.05,
-  "mean_iterations": 1.3,
+  "mean_iterations": 1.34375,
+  "iterations_ci95": [
+    1.2264651792998487,
+    1.4610348207001513
+  ],
   "convergence_rate": 1.0,
-  "mean_final_js_div": 0.01864002461532044,
-  "mean_final_cosine_sim": 0.9983310484216099,
+  "convergence_ci95": [
+    0.9433739770288436,
+    1.0
+  ],
+  "mean_final_js_div": 0.016633058648250845,
+  "final_js_div_ci95": [
+    0.013691448321061755,
+    0.019574668975439934
+  ],
+  "mean_final_cosine_sim": 0.9977222540073458,
   "final_argmax_agreement_rate": 1.0,
-  "mean_final_rubric_mae": 0.05166666666666666,
-  "mean_total_latency_s": 4.05517098903656
+  "final_argmax_agreement_ci95": [
+    0.9433739770288436,
+    1.0
+  ],
+  "mean_final_rubric_mae": 0.055953645833333315,
+  "final_rubric_mae_ci95": [
+    0.044492529994293165,
+    0.06741476167237347
+  ],
+  "mean_total_latency_s": 4.655982196331024
 }

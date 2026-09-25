@@ -113,24 +113,37 @@ def judge(cell: tuple[int, int], target: tuple[int, int] = g.TARGET,
         content.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                         "data": end_png}})
 
+    required = ["reasoning", "reached_target", "closeness", "avoided_damage",
+                "path_efficiency", "action_probs"]
     last_err = None
     for attempt in range(max_retries):
         try:
             t0 = time.time()
             resp = client().messages.create(
                 model=MODEL,
-                max_tokens=600,
+                max_tokens=1000,
                 tools=[RUBRIC_TOOL],
                 tool_choice={"type": "tool", "name": "rubric_judgment"},
                 messages=[{"role": "user", "content": content}],
             )
             latency = time.time() - t0
+            out = None
             for block in resp.content:
                 if block.type == "tool_use":
                     out = dict(block.input)
-                    out["_latency_s"] = latency
-                    return out
-            raise RuntimeError("no tool_use block in response")
+                    break
+            if out is None:
+                raise RuntimeError("no tool_use block in response")
+            missing = [k for k in required if k not in out]
+            if missing:
+                raise RuntimeError(
+                    f"incomplete tool_use output (stop_reason={resp.stop_reason}, "
+                    f"missing={missing})")
+            if not isinstance(out.get("action_probs"), dict) or \
+                    set(out["action_probs"]) < set(g.ACTIONS):
+                raise RuntimeError(f"malformed action_probs: {out.get('action_probs')!r}")
+            out["_latency_s"] = latency
+            return out
         except Exception as e:  # noqa: BLE001
             last_err = e
             time.sleep(min(2 ** attempt, 8))

@@ -2,7 +2,9 @@
 is distilled from every (state, rubric) pair the real LLM judge produced
 in E1-E3, then evaluated at inference time (no further API calls) against
 a held-out set of situations that get a fresh, real LLM judge call as the
-comparison target.
+comparison target. The held-out set is built the same way as E1-E3 (every
+eligible cell, several independent replicates) for a statistically
+reasonable test size.
 """
 from __future__ import annotations
 
@@ -26,7 +28,7 @@ import state_sampler as ss
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e4")
 FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
 BASE = os.path.join(os.path.dirname(__file__), "..", "results")
-N_TEST = 8
+TEST_REPLICATES = 3  # 16 eligible cells x 3 replicates = 48 held-out situations
 RUBRIC_FIELDS = rm.RUBRIC_FIELDS
 
 
@@ -56,23 +58,30 @@ def run():
 
     net = rm.RewardNetwork(seed=0).fit(X, Y)
 
-    # a few-fold check on the training distribution itself (in-sample fit quality)
     Y_hat_train = net.model.predict(X)
     train_mae = float(np.mean(np.abs(Y_hat_train - Y)))
     print(f"in-sample rubric MAE: {train_mae:.4f}")
 
-    test_cells = ss.sample_cells(N_TEST, seed=99)
-    rng = np.random.default_rng(31)
+    test_situations = ss.build_situations(rp.action_probs, replicates=TEST_REPLICATES,
+                                           seed_base=4)
+    print(f"E4: {len(test_situations)} held-out test situations "
+          f"({len(ss.eligible_cells())} cells x {TEST_REPLICATES} replicates)")
 
     records = []
-    for start in test_cells:
-        state = ss.partial_rollout(rp.action_probs, start, rng)
+    n_failed = 0
+    for k, state in enumerate(test_situations):
         cur, steps, hits = state["cur"], state["steps_taken"], state["obstacle_hits"]
         rule_probs = rp.action_probs(cur)
 
-        t0 = time.time()
-        llm_out = lj.judge(cur, g.TARGET, instruction=None, obstacle_hits=hits, steps_taken=steps)
-        llm_latency = time.time() - t0
+        try:
+            t0 = time.time()
+            llm_out = lj.judge(cur, g.TARGET, instruction=None, obstacle_hits=hits,
+                                steps_taken=steps)
+            llm_latency = time.time() - t0
+        except Exception as e:  # noqa: BLE001
+            print(f"[{k+1}/{len(test_situations)}] SKIPPED (judge failed: {e})")
+            n_failed += 1
+            continue
         llm_probs = lj.probs_array(llm_out)
 
         t0 = time.time()
@@ -82,7 +91,7 @@ def run():
 
         rec = {
             "cell": cur, "steps_taken": steps, "obstacle_hits": hits,
-            "llm_rubric": {k: llm_out[k] for k in RUBRIC_FIELDS},
+            "llm_rubric": {k2: llm_out[k2] for k2 in RUBRIC_FIELDS},
             "rm_rubric": rm_rubric,
             "rubric_mae_rm_vs_llm": met.rubric_mae(rm_rubric, llm_out, RUBRIC_FIELDS),
             "rule_probs": rule_probs.tolist(), "llm_probs": llm_probs.tolist(),
@@ -94,17 +103,32 @@ def run():
             "llm_latency_s": llm_latency, "rm_latency_s": rm_latency,
         }
         records.append(rec)
-        print(f"cell={cur} MAE(rm,llm)={rec['rubric_mae_rm_vs_llm']:.3f} "
-              f"JS(rm,llm)={rec['js_div_rm_vs_llm']:.3f} JS(llm,rule)={rec['js_div_llm_vs_rule']:.3f} "
-              f"latency llm={llm_latency:.2f}s rm={rm_latency*1000:.2f}ms")
+        if (k + 1) % 8 == 0 or k == len(test_situations) - 1:
+            print(f"[{k+1}/{len(test_situations)}] cell={cur} "
+                  f"MAE(rm,llm)={rec['rubric_mae_rm_vs_llm']:.3f} "
+                  f"JS(rm,llm)={rec['js_div_rm_vs_llm']:.3f}")
+            with open(os.path.join(OUT_DIR, "records.json"), "w") as f:
+                json.dump(records, f, indent=2, default=str)
+
+    if n_failed:
+        print(f"{n_failed} situation(s) skipped after exhausting retries")
+    n = len(records)
+    n_agree = int(sum(r["argmax_agree_rm_vs_llm"] for r in records))
+    agree_lo, agree_hi = met.wilson_ci(n_agree, n)
+    mae_mean, mae_lo, mae_hi = met.mean_ci([r["rubric_mae_rm_vs_llm"] for r in records])
+    js_mean, js_lo, js_hi = met.mean_ci([r["js_div_rm_vs_llm"] for r in records])
+    js_rule_mean, js_rule_lo, js_rule_hi = met.mean_ci([r["js_div_llm_vs_rule"] for r in records])
 
     summary = {
-        "n_train_pairs": len(X), "in_sample_rubric_mae": train_mae, "n_test_cells": N_TEST,
-        "mean_rubric_mae_rm_vs_llm": float(np.mean([r["rubric_mae_rm_vs_llm"] for r in records])),
-        "mean_js_div_rm_vs_llm": float(np.mean([r["js_div_rm_vs_llm"] for r in records])),
+        "n_train_pairs": len(X), "in_sample_rubric_mae": train_mae,
+        "n_test_situations": n, "n_failed": n_failed, "test_replicates": TEST_REPLICATES,
+        "mean_rubric_mae_rm_vs_llm": mae_mean, "rubric_mae_rm_vs_llm_ci95": [mae_lo, mae_hi],
+        "mean_js_div_rm_vs_llm": js_mean, "js_div_rm_vs_llm_ci95": [js_lo, js_hi],
         "mean_js_div_rm_vs_rule": float(np.mean([r["js_div_rm_vs_rule"] for r in records])),
-        "mean_js_div_llm_vs_rule": float(np.mean([r["js_div_llm_vs_rule"] for r in records])),
-        "argmax_agreement_rm_vs_llm": float(np.mean([r["argmax_agree_rm_vs_llm"] for r in records])),
+        "mean_js_div_llm_vs_rule": js_rule_mean,
+        "js_div_llm_vs_rule_ci95": [js_rule_lo, js_rule_hi],
+        "argmax_agreement_rm_vs_llm": n_agree / n,
+        "argmax_agreement_rm_vs_llm_ci95": [agree_lo, agree_hi],
         "mean_llm_latency_s": float(np.mean([r["llm_latency_s"] for r in records])),
         "mean_rm_latency_s": float(np.mean([r["rm_latency_s"] for r in records])),
         "speedup_x": float(np.mean([r["llm_latency_s"] for r in records]) /
@@ -118,11 +142,11 @@ def run():
         json.dump(summary, f, indent=2)
 
     # --- figures ---
-    labels = [str(r["cell"]) for r in records]
-    viz.bar_overlay(labels, {
-        "LLM judge closeness": [r["llm_rubric"]["closeness"] for r in records],
-        "reward network closeness": [r["rm_rubric"]["closeness"] for r in records],
-    }, "closeness score", "E4: LLM judge vs. distilled reward network (held-out cells)",
+    viz.scatter_calibration(
+        [r["llm_rubric"]["closeness"] for r in records],
+        [r["rm_rubric"]["closeness"] for r in records],
+        "LLM judge closeness", "reward network closeness",
+        f"E4: closeness calibration, LLM judge vs. reward network (n={n})",
         os.path.join(FIG_DIR, "e4_rubric_closeness.png"))
 
     viz.bar_overlay(["mean latency (log ms)"], {

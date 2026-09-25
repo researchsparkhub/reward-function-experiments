@@ -1,7 +1,9 @@
 """E3 - same protocol as E2 (natural-language instruction + iterative LLM
 judge refinement), but the reference/base policy is now a trained neural
 network instead of the hand-written rule, so the LLM is being asked to
-track an imperfect, learned policy rather than a near-optimal one.
+track an imperfect, learned policy rather than a near-optimal one. Every
+eligible grid cell is rolled out several independent times to reach a
+statistically reasonable sample size.
 """
 from __future__ import annotations
 
@@ -25,7 +27,7 @@ import rule_policy as rp  # only for the software rubric ground truth
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e3")
 FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
-N_CELLS = 10
+REPLICATES = 4  # 16 eligible cells x 4 replicates = 64 situations
 MAX_ITERS = 4
 TOL = 0.05
 RUBRIC_FIELDS = ["closeness", "avoided_damage", "path_efficiency"]
@@ -49,19 +51,26 @@ def run():
     os.makedirs(OUT_DIR, exist_ok=True)
     os.makedirs(FIG_DIR, exist_ok=True)
     pol = get_policy()
-    cells = ss.sample_cells(N_CELLS, seed=44)
-    rng = np.random.default_rng(23)
+    situations = ss.build_situations(pol.action_probs, replicates=REPLICATES, seed_base=3)
+    print(f"E3: {len(situations)} situations "
+          f"({len(ss.eligible_cells())} cells x {REPLICATES} replicates)")
 
     records = []
-    for i, start in enumerate(cells):
-        state = ss.partial_rollout(pol.action_probs, start, rng)
+    n_failed = 0
+    for i, state in enumerate(situations):
         cur, steps, hits = state["cur"], state["steps_taken"], state["obstacle_hits"]
+        start = state["start"]
         nn_probs = pol.action_probs(cur)
         sw_rubric = rp.state_rubric(start, cur, steps, hits)  # software ground truth, for context
         instruction = instr.instruction_for(i)
 
-        history = lj.iterative_judge(cur, nn_probs, g.TARGET, instruction, hits, steps,
-                                       max_iters=MAX_ITERS, tol=TOL)
+        try:
+            history = lj.iterative_judge(cur, nn_probs, g.TARGET, instruction, hits, steps,
+                                           max_iters=MAX_ITERS, tol=TOL)
+        except Exception as e:  # noqa: BLE001
+            print(f"[{i+1}/{len(situations)}] SKIPPED (judge failed: {e})")
+            n_failed += 1
+            continue
         final = history[-1]
         final_probs = lj.probs_array(final.judge_out)
         rule_probs = rp.action_probs(cur)  # for a three-way comparison in the report
@@ -86,18 +95,35 @@ def run():
             "total_latency_s": float(sum(h.latency_s for h in history)),
         }
         records.append(rec)
-        print(f"cell={cur} iters={rec['iterations_used']} converged={rec['converged']} "
-              f"JS_per_iter={[round(x,3) for x in rec['js_div_per_iter']]}")
+        if (i + 1) % 8 == 0 or i == len(situations) - 1:
+            print(f"[{i+1}/{len(situations)}] cell={cur} iters={rec['iterations_used']} "
+                  f"converged={rec['converged']}")
+            with open(os.path.join(OUT_DIR, "records.json"), "w") as f:
+                json.dump(records, f, indent=2, default=str)
+
+    if n_failed:
+        print(f"{n_failed} situation(s) skipped after exhausting retries")
+    n = len(records)
+    n_conv = int(sum(r["converged"] for r in records))
+    conv_lo, conv_hi = met.wilson_ci(n_conv, n)
+    n_agree = int(sum(r["final_argmax_agree_vs_nn"] for r in records))
+    agree_lo, agree_hi = met.wilson_ci(n_agree, n)
+    iters_mean, iters_lo, iters_hi = met.mean_ci([r["iterations_used"] for r in records])
+    js_mean, js_lo, js_hi = met.mean_ci([r["js_div_per_iter"][-1] for r in records])
+    mae_mean, mae_lo, mae_hi = met.mean_ci([r["final_rubric_mae"] for r in records])
 
     summary = {
-        "n_cells": N_CELLS, "max_iters": MAX_ITERS, "tol": TOL,
-        "mean_iterations": float(np.mean([r["iterations_used"] for r in records])),
-        "convergence_rate": float(np.mean([r["converged"] for r in records])),
-        "mean_final_js_div": float(np.mean([r["js_div_per_iter"][-1] for r in records])),
+        "n_situations": n, "n_failed": n_failed,
+        "n_cells": len(ss.eligible_cells()), "replicates": REPLICATES,
+        "max_iters": MAX_ITERS, "tol": TOL,
+        "mean_iterations": iters_mean, "iterations_ci95": [iters_lo, iters_hi],
+        "convergence_rate": n_conv / n, "convergence_ci95": [conv_lo, conv_hi],
+        "mean_final_js_div": js_mean, "final_js_div_ci95": [js_lo, js_hi],
         "mean_final_cosine_sim_vs_nn": float(np.mean([r["final_cosine_sim_vs_nn"] for r in records])),
         "mean_final_cosine_sim_vs_rule": float(np.mean([r["final_cosine_sim_vs_rule"] for r in records])),
-        "final_argmax_agreement_vs_nn": float(np.mean([r["final_argmax_agree_vs_nn"] for r in records])),
-        "mean_final_rubric_mae": float(np.mean([r["final_rubric_mae"] for r in records])),
+        "final_argmax_agreement_vs_nn": n_agree / n,
+        "final_argmax_agreement_vs_nn_ci95": [agree_lo, agree_hi],
+        "mean_final_rubric_mae": mae_mean, "final_rubric_mae_ci95": [mae_lo, mae_hi],
         "mean_total_latency_s": float(np.mean([r["total_latency_s"] for r in records])),
     }
     print("SUMMARY", json.dumps(summary, indent=2))
@@ -110,14 +136,16 @@ def run():
     # --- figures ---
     max_len = max(len(r["js_div_per_iter"]) for r in records)
     iters = list(range(1, max_len + 1))
-    mean_js_by_iter = []
+    mean_js_by_iter, lo_by_iter, hi_by_iter = [], [], []
     for k in range(max_len):
         vals = [r["js_div_per_iter"][k] for r in records if len(r["js_div_per_iter"]) > k]
-        mean_js_by_iter.append(float(np.mean(vals)))
+        m, lo, hi = met.mean_ci(vals)
+        mean_js_by_iter.append(m); lo_by_iter.append(lo); hi_by_iter.append(hi)
     viz.line_plot(iters, {"mean JS divergence to NN policy": mean_js_by_iter},
                   "refinement round", "Jensen-Shannon divergence",
-                  "E3: LLM judge convergence toward the NN policy",
-                  os.path.join(FIG_DIR, "e3_convergence.png"))
+                  f"E3: LLM judge convergence toward the NN policy (n={n})",
+                  os.path.join(FIG_DIR, "e3_convergence.png"),
+                  band={"mean JS divergence to NN policy": (lo_by_iter, hi_by_iter)})
 
     nn_field = {str(r["cur"]): r["nn_probs"] for r in records}
     llm_field = {str(r["cur"]): r["final_probs"] for r in records}

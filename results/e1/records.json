@@ -2,6 +2,300 @@
   {
     "start": [
       1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.6,
+      0.4,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "Robot is at (2,3) and target sofa is at (4,4). Manhattan distance is 3 cells away (2 down, 1 right). The robot has taken 3 steps with 0 wall collisions, which is efficient so far given the wall layout. The optimal path would be down, down, right (3 steps) or down, right, down (3 steps). The robot needs to navigate around the wall structure - there's a wall directly below at (3,2)-(3,3), so the robot must move right first to clear the wall, then move down. The path down, right, down or similar would be shortest. Robot is moderately close to target but not yet at it.",
+    "latency_s": 3.087761163711548,
+    "js_div": 0.2750346364709267,
+    "cosine_sim": 0.5565215846800823,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.057133333333333335
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (2,3) and needs to reach the target sofa at (4,4). The Manhattan distance is 2 moves (1 down, 1 right). The robot has taken 3 steps so far with 0 wall collisions, showing good obstacle avoidance so far. The direct path down and right appears clear based on the map. The robot is close to the target and has been efficient in its approach (3 steps with 0 collisions indicates good pathfinding). To reach the goal, the robot should move down first (to row 3) then right (to column 4), or right first (to column 4) then down (to row 4). Both orderings are equally efficient.",
+    "latency_s": 2.641061782836914,
+    "js_div": 0.21883974292200073,
+    "cosine_sim": 0.7082643383467213,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.2,
+      0.7,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.65,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "llm_reasoning": "The robot is at (2,3) and the target sofa is at (4,4). The robot needs to move down 2 rows and right 1 column. Currently, it has not bumped any walls and has taken 3 steps. The Manhattan distance to target is 3. Since the robot has taken 3 steps and needs only 3 more (down, right, down or similar), this suggests it may have taken a slightly indirect path, but is now well-positioned. The next logical moves are down (to reach row 4) then right (to reach column 4), or right then down. Since the robot is closer to the target than it was initially, it shows reasonable progress. The most efficient path would be down-right-down or right-down-down (3 steps total), and with 3 steps already taken, the robot is on track if it has been moving efficiently toward the target.",
+    "latency_s": 3.269268035888672,
+    "js_div": 0.08370247470224616,
+    "cosine_sim": 0.9604805128770108,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      1,
+      1
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.25,
+      0.7,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "llm_reasoning": "Robot is at (2,3) and needs to reach target at (4,4). Manhattan distance is 3 cells away (down 2, right 1). The robot has taken 3 steps with 0 wall collisions, showing good navigation. The path taken so far appears reasonably efficient. The robot needs to move down (closer to row 4) and right (closer to column 4). Next move should prioritize going down since it's the primary axis where progress is needed.",
+    "latency_s": 2.4059860706329346,
+    "js_div": 0.08926604108574546,
+    "cosine_sim": 0.9430157740933417,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.07619999999999998
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 1,
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.05,
+      0.15,
+      0.75,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 0.8,
+      "path_efficiency": 0.5
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.28,
+      "avoided_damage": 0.75,
+      "path_efficiency": 0.5
+    },
+    "llm_reasoning": "The robot is currently at (1, 3) and needs to reach the target at (4, 4). This requires moving down 3 rows and right 1 column. The robot has taken 2 steps and hit a wall once, suggesting it may have moved inefficiently or into obstacles. From the map, the robot needs to navigate around walls to reach the target. The direct path would be blocked by walls, requiring strategic movement. Given the current position and target location with intervening walls, the next logical move should be downward to progress toward the target row.",
+    "latency_s": 2.4103329181671143,
+    "js_div": 0.028449998636259098,
+    "cosine_sim": 0.9883257290008964,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.0662
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "llm_reasoning": "The robot is at position (2,3) and the target (red sofa) is at position (4,4). The robot needs to move 2 cells right and 2 cells down to reach the target. The most direct path would be: down, down, right, right (or right, right, down, down). The robot has taken 2 steps so far without hitting any walls, which is good. The robot is currently at Manhattan distance 4 from the target. Since it has only taken 2 steps and needs to cover 4 cells of Manhattan distance, it's still on a reasonable path. The next logical move should be to move closer to the target - moving down or right would both reduce the distance.",
+    "latency_s": 2.6063039302825928,
+    "js_div": 0.21883974292200073,
+    "cosine_sim": 0.7082643383467213,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09046666666666665
+  },
+  {
+    "start": [
+      1,
+      2
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.4,
+      0.5,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "llm_reasoning": "The robot is at (2,3) and the target sofa is at (4,4). The Manhattan distance is 3 cells away. The robot has taken 2 steps with 0 wall collisions, suggesting reasonable navigation so far. To reach the target, the robot needs to move down 2 rows and right 1 column. The most efficient path would be to move down twice then right once, or right once then down twice. The robot should prioritize moving down and right. Currently moving down would bring it to (3,3), getting closer to the target.",
+    "latency_s": 2.2633211612701416,
+    "js_div": 0.17727988296565728,
+    "cosine_sim": 0.7816157738935541,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.09046666666666665
+  },
+  {
+    "start": [
+      1,
       2
     ],
     "cur": [
@@ -30,16 +324,688 @@
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.4,
+      "closeness": 0.65,
       "avoided_damage": 1.0,
       "path_efficiency": 0.85
     },
-    "llm_reasoning": "The robot is at (2,3) and needs to reach the target sofa at (4,4). It is 2 steps away diagonally (Manhattan distance = 3). The robot has taken 2 steps with 0 collisions, suggesting it has navigated efficiently. The optimal path would be to move down, then right (or right, then down). Currently, the robot should prioritize moving down since it needs to decrease row by 2 and increase column by 1. The most efficient next move is DOWN to get closer to the target's row.",
-    "latency_s": 2.536451816558838,
+    "llm_reasoning": "The robot is currently at (2,3) and needs to reach the target at (4,4). The Manhattan distance is |4-2| + |4-3| = 2 + 1 = 3 steps. The robot has taken 2 steps so far without hitting any walls. To reach the target, the robot needs to move down 2 rows and right 1 column. The optimal path would be to move down twice, then right once (or right first, then down twice). Both are 3-step paths. The robot is moderately close to the target and should take an efficient downward path. The next logical move is DOWN to get closer to row 4.",
+    "latency_s": 240.09688186645508,
     "js_div": 0.06335784300096427,
     "cosine_sim": 0.9793896654414174,
     "argmax_agree": 1.0,
-    "rubric_mae": 0.10713333333333334
+    "rubric_mae": 0.0762
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.71,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot (blue circle) is at position (3, 3) and needs to reach the target sofa (red circle) at position (4, 4). The target is just one cell down and one cell right. The robot has taken 2 steps and hasn't hit any walls yet, showing good navigation. The path to the target is direct and unobstructed - the robot can move down one step and then right one step. Currently at distance 2 (Manhattan distance) from target. The route taken so far appears efficient with no backtracking or wasted moves.",
+    "latency_s": 3.451781988143921,
+    "js_div": 0.019202610098224018,
+    "cosine_sim": 0.9983548159918225,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.0014333333333333604
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.05,
+      0.4,
+      0.5,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "Robot is at (3,3), target sofa is at (4,4). Robot needs to move down-right to reach the target. Currently 1 step away diagonally. The optimal path would be to move right then down (or down then right). Robot has taken 2 steps and hasn't bumped any walls, suggesting reasonable path planning. From current position, moving right or down would get closer to target. Next move should be either right or down, with down being slightly better as it directly approaches the target's row.",
+    "latency_s": 3.166930913925171,
+    "js_div": 0.005143880085557818,
+    "cosine_sim": 0.992546775893028,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.06189999999999999
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.86,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "llm_reasoning": "The robot (blue circle at row 3, col 3) needs to reach the target sofa (red circle at row 4, col 4). The robot is currently 1 cell away diagonally from the target. The most direct path would be to move down 1 cell and right 1 cell. Since the robot can only move in cardinal directions (up/down/left/right), it should move either down or right next. Moving down would put it at (4,3), then one more right move to (4,4) reaches the target. Moving right first to (3,4), then down to (4,4) also works. The robot has taken 2 steps and hit 0 walls, showing good navigation so far. The two distractors (orange circles) are at (1,6) and (6,5), not on the direct path. From the goal image, the robot needs to be at (4,4).",
+    "latency_s": 4.043828964233398,
+    "js_div": 0.019202610098224018,
+    "cosine_sim": 0.9983548159918225,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.06523333333333332
+  },
+  {
+    "start": [
+      1,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.0,
+      0.4,
+      0.6,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.8
+    },
+    "llm_reasoning": "The robot (blue) is at position (3,3) and needs to reach the target sofa (red) at position (4,4). This is only 1 step away diagonally, but since the robot can only move up/right/down/left, it needs at least 2 moves total. The robot has taken 2 steps so far without hitting any walls, which is good. The most direct path would be to move either down then right, or right then down. Currently, the robot should move either down or right to get closer to the target. Moving down gets the robot to (4,3), then one more move right gets to (4,4). Moving right gets to (3,4), then down to (4,4). Both are equally efficient. Given the Manhattan distance remaining is 2, and the robot has already taken 2 steps efficiently, the next best move is to move down (towards row 4 where the target is).",
+    "latency_s": 4.1991353034973145,
+    "js_div": 0.0241217040230053,
+    "cosine_sim": 0.9789674400445456,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.1381
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.2,
+      0.7,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.75
+    },
+    "llm_reasoning": "The robot is at (2,3) and the target sofa is at (4,4). The robot needs to move down 2 cells and right 1 cell to reach the target. The optimal path would be 3 moves total. With 2 steps already taken, the robot is progressing towards the target. The robot has not bumped any walls yet, showing good navigation. The most direct next move should be either down or right. Moving down first would reduce the distance to the target's row, then moving right would align with the column. The robot should prioritize moving down to get closer to row 4.",
+    "latency_s": 2.424449920654297,
+    "js_div": 0.08370247470224616,
+    "cosine_sim": 0.9604805128770108,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.0,
+      0.95,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (2,3) and needs to reach the target at (4,4). The target is 2 cells down and 1 cell to the right. The robot can move down to (3,3) then down again to (4,3), then right to (4,4). This is an efficient path with minimal deviation. The robot hasn't bumped any walls yet. Currently, the robot is 2 Manhattan distance steps away from the target. The next move should be down.",
+    "latency_s": 2.0456368923187256,
+    "js_div": 0.03229089774038687,
+    "cosine_sim": 0.9971371863786933,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.0662
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.15,
+      0.75,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (2, 3) and needs to reach the target at (4, 4). The target is 2 cells away: 2 rows down and 1 column right. The robot has taken 2 steps with 0 wall collisions, indicating good navigation so far. The most direct path would be to move down twice and right once. Currently, the robot should move down to get closer to the target's row. The path appears efficient as it's a short Manhattan distance of 3 cells, and the robot hasn't wasted moves yet.",
+    "latency_s": 2.377214193344116,
+    "js_div": 0.06335784300096427,
+    "cosine_sim": 0.9793896654414174,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04286666666666664
+  },
+  {
+    "start": [
+      1,
+      4
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (2, 3) and needs to reach the target sofa at (4, 4). The Manhattan distance is 2 cells (1 right, 1 down). The robot has taken 2 steps with 0 wall collisions so far, indicating good path efficiency. From the current position, the robot can move right and then down (or down then right) to reach the target in 2 more moves. This would be an efficient path. The most direct next move should be either right or down to approach the target.",
+    "latency_s": 2.515484094619751,
+    "js_div": 0.21883974292200073,
+    "cosine_sim": 0.7082643383467213,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      1,
+      5
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.3,
+      0.7,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (2, 3) and the target is at (4, 4). The Manhattan distance is |4-2| + |4-3| = 2 + 1 = 3 steps. The robot has taken 3 steps and never bumped a wall, so it has been traveling efficiently so far. To reach the target, the robot needs to move down 2 cells and right 1 cell. The most direct path would be: down, down, right (or down, right, down). The robot should move down next to get closer to the target's row. The path so far has been efficient with no collisions.",
+    "latency_s": 2.3636221885681152,
+    "js_div": 0.12498250947284956,
+    "cosine_sim": 0.9189201096698367,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.032866666666666676
+  },
+  {
+    "start": [
+      1,
+      5
+    ],
+    "cur": [
+      1,
+      2
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "llm_probs": [
+      0.0,
+      0.7,
+      0.25,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.2857,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.35,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.75
+    },
+    "llm_reasoning": "Robot is at (1,2), target is at (4,4). The robot needs to move down 3 rows and right 2 columns. Current position is upper-left area; target is middle-right area. The robot has taken 3 steps with 0 wall collisions, showing good navigation so far. To reach the target efficiently, the robot should move down (to decrease row distance) and right (to decrease column distance). The most direct path would involve moving down to row 4, then right to column 4. Next optimal move is to go down since the robot can move down at (1,2) to (2,2), but there's a wall at (2,2). So the robot should move right first to (1,3), which is free. From current position, moving down would hit a wall, so right is more prudent. Actually checking the map: row 2 is ###.#### so (2,2) is a wall. The robot must move right or down. Moving down hits wall. Moving right to (1,3) is free. The best path forward is to move right and then navigate down around obstacles.",
+    "latency_s": 4.699568033218384,
+    "js_div": 0.08926604108574537,
+    "cosine_sim": 0.9430157740933417,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.10476666666666666
+  },
+  {
+    "start": [
+      1,
+      5
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.0,
+      0.1,
+      0.85,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.6,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (2, 3) and needs to reach the target at (4, 4). The Manhattan distance is |4-2| + |4-3| = 2 + 1 = 3 cells. The robot has taken 3 steps so far without hitting any walls. From the current position, the robot should move down to (3, 3) then right to (3, 4) then down to (4, 4) to reach the target. The next optimal move is down to get closer to the target.",
+    "latency_s": 2.040678024291992,
+    "js_div": 0.06110385602601838,
+    "cosine_sim": 0.9903944283021535,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.009533333333333319
+  },
+  {
+    "start": [
+      1,
+      5
+    ],
+    "cur": [
+      2,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05397652246351719,
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178
+    ],
+    "llm_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "The robot is currently at (2,3) and needs to reach the target 'sofa' at (4,4). This requires moving 2 rows down and 1 column right. The robot has taken 3 steps with 0 wall collisions, showing good navigation so far. The most direct path would be to move down twice and then right once. Currently, the robot is relatively close to the target (Manhattan distance = 3). The optimal next move should be downward to reduce the distance. The robot has avoided obstacles successfully and appears to be on an efficient path.",
+    "latency_s": 2.7162909507751465,
+    "js_div": 0.044119932433771235,
+    "cosine_sim": 0.990999020470738,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.10953333333333333
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      0.05,
+      0.9,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.25,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "The robot is at (1, 3) and needs to reach the target sofa at (4, 4). The Manhattan distance is 4 cells (3 down, 1 right). The robot has taken 3 steps with 0 wall collisions so far. Looking at the map, a direct path would be: move down to (2,3), down to (3,3), down to (4,3), then right to (4,4). The robot is currently in row 1 and needs to reach row 4, so it should move down. The path appears relatively efficient, avoiding walls and obstacles. The robot has not yet reached the target, and needs to continue moving downward and then right.",
+    "latency_s": 2.570366859436035,
+    "js_div": 0.0010360189226027948,
+    "cosine_sim": 0.99999111683673,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.10953333333333333
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      0.8,
+      0.15,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.35,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.75
+    },
+    "llm_reasoning": "The robot is at position (1, 3) and needs to reach the target 'sofa' at position (4, 4). Current distance is 4 steps (3 down, 1 right). The robot has taken 3 steps with 0 collisions, indicating careful navigation. To reach the target, the robot needs to move down through row 2 (which has a wall blocking direct access at column 3), then navigate around to reach (4, 4). The optimal path would be to move right first to (1, 4) or (1, 5), then down to row 4, then adjust horizontally. Moving down from (1, 3) is blocked by the wall at (2, 3). The best next move is RIGHT to get around the wall structure.",
+    "latency_s": 2.9999778270721436,
+    "js_div": 0.3461468162982356,
+    "cosine_sim": 0.24300438748713027,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.10953333333333333
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      4
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 1,
+    "rule_probs": [
+      0.0031000130640371788,
+      0.0539765224635172,
+      0.0031000130640371788,
+      0.9398234514084085
+    ],
+    "llm_probs": [
+      0.05,
+      0.05,
+      0.85,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.2857,
+      "avoided_damage": 0.8,
+      "path_efficiency": 0.6667
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.6,
+      "avoided_damage": 0.75,
+      "path_efficiency": 0.6
+    },
+    "llm_reasoning": "The robot is at (1, 4) and needs to reach the target at (4, 4). The target is directly below the robot's current position (same column, 3 rows down). The robot has taken 3 steps and bumped a wall once, suggesting some inefficiency. The most direct path would be to move down 3 times to reach row 4. Looking at the map, there is a clear vertical path in column 4: row 1 (robot), row 2 is blocked by wall above, but row 3 is open with a \".\", and rows 4-5 are accessible. Wait, let me recheck: row 2 col 4 is \".\" (free), row 3 col 4 is \".\" (free), row 4 col 4 is \"T\" (target). So moving down is the correct immediate action. The robot should move down to get closer to the target.",
+    "latency_s": 4.045050144195557,
+    "js_div": 0.5419930675995055,
+    "cosine_sim": 0.06524788110241392,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.14366666666666666
+  },
+  {
+    "start": [
+      1,
+      6
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 3,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      0.1,
+      0.8,
+      0.1
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (1,3) and needs to reach the target 'T' (sofa) at (4,4). Current distance: 4 cells (3 down, 1 right). The robot has taken 3 steps with 0 wall collisions, indicating efficient navigation so far. The optimal path requires moving down 3 rows and right 1 column, for a minimum of 4 steps total. With 3 steps already taken and 0 collisions, the robot is on track. The next move should be down to progress toward the target, as moving down reduces the Manhattan distance most efficiently given the wall layout.",
+    "latency_s": 2.7045750617980957,
+    "js_div": 0.010290201322674677,
+    "cosine_sim": 0.9955869121474048,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.057133333333333335
   },
   {
     "start": [
@@ -72,147 +1038,357 @@
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.85,
+      "closeness": 0.5,
       "avoided_damage": 1.0,
       "path_efficiency": 0.95
     },
-    "llm_reasoning": "The robot is at (3,3) and the target (sofa/red circle) is at (4,4). This is a very short distance - just one cell down and one cell right diagonally, requiring only 2 moves. The robot has taken 1 step so far and hasn't hit any walls. The most direct path would be: down (to 4,3) then right (to 4,4), or right (to 3,4) then down (to 4,4). Both are optimal 2-move solutions. The robot is close to the target and should prioritize moving toward it. Down and right are equally good next moves.",
-    "latency_s": 2.517611026763916,
+    "llm_reasoning": "The robot is at (3,3) and needs to reach the target (sofa) at (4,4). Currently, the robot is 1 cell away diagonally from the target - specifically, it needs to move down 1 and right 1. The most direct path would be to move down or right first. The robot has taken only 1 step so far with 0 wall collisions, indicating good obstacle avoidance so far. The path is very efficient since we're at the start with minimal steps taken. The optimal next move is to go down (to row 4) or right (to col 4), with a slight preference for down since that gets us to the target row first, or right to get to target column. Both down and right are equally valid for a 2-step solution.",
+    "latency_s": 3.163130044937134,
     "js_div": 0.019202610098224018,
     "cosine_sim": 0.9983548159918225,
     "argmax_agree": 1.0,
-    "rubric_mae": 0.06189999999999999
+    "rubric_mae": 0.08810000000000003
   },
   {
     "start": [
-      1,
-      1
-    ],
-    "cur": [
       2,
       3
     ],
-    "steps_taken": 3,
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
     "obstacle_hits": 0,
     "rule_probs": [
-      0.05397652246351719,
-      0.003100013064037178,
-      0.9398234514084084,
-      0.003100013064037178
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
     ],
     "llm_probs": [
-      0.1,
-      0.35,
+      0.0,
       0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.86,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "Robot is at (3,3) and target (sofa) is at (4,4). The robot is 1 cell away diagonally from the target. Current position is one row above and one column to the left of the target. The robot has taken 1 step with 0 wall collisions, indicating efficient movement so far. To reach the target, the robot should move down and right. The most direct path would be to move down one cell to (4,3) then right one cell to (4,4), or move right first then down. Both are equally short (2 moves total). The robot should prioritize moving down and right toward the target.",
+    "latency_s": 2.6739630699157715,
+    "js_div": 0.019202610098224018,
+    "cosine_sim": 0.9983548159918225,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04856666666666665
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.86,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "Robot is at (3,3) with target sofa at (4,4). This is a very short distance - just 1 row down and 1 column right. The robot has taken 1 step so far with 0 wall collisions, indicating efficient movement. The Manhattan distance is 2 cells. The optimal path would be either: down then right, or right then down (both 2 steps). Currently the robot is 1 column left and 1 row above the target. The next sensible move would be to move either down or right to reduce the distance. Both are equally valid first moves toward the goal. The path so far has been efficient with no obstacles hit.",
+    "latency_s": 2.6154839992523193,
+    "js_div": 0.019202610098224018,
+    "cosine_sim": 0.9983548159918225,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04856666666666665
+  },
+  {
+    "start": [
+      2,
+      3
+    ],
+    "cur": [
+      1,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.002949930877995047,
+      0.05136333525464558,
+      0.8943233986127138,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      0.1,
+      0.85,
       0.05
     ],
     "sw_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.5714,
+      "closeness": 0.4286,
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.3,
+      "closeness": 0.43,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.7
+      "path_efficiency": 1.0
     },
-    "llm_reasoning": "The robot is at (2,3) and the target 'sofa' is at (4,4). The robot needs to move 2 cells down and 1 cell right. The shortest path would require 3 moves total. So far the robot has taken 3 steps and hasn't hit any walls, which is good. The robot is currently at Manhattan distance 3 from the target. To proceed optimally, the robot should move down to reduce the vertical distance first, or move right to start reducing the horizontal distance. Moving down would bring it closer (distance would become 2). The path efficiency appears good since it has taken 3 steps without hitting obstacles and is still 3 Manhattan distance away, suggesting it may have been exploring or taking an indirect route initially, but is now well-positioned.",
-    "latency_s": 3.052151679992676,
-    "js_div": 0.16361152332828344,
-    "cosine_sim": 0.8158521773326325,
+    "llm_reasoning": "The robot is at (1,3) and needs to reach the target sofa at (4,4). The robot is 3 cells down and 1 cell right from the target. A direct path exists: move down 3 times, then right 1 time for a total of 4 moves. The robot has taken 1 step so far with 0 wall collisions, indicating good path efficiency so far. The most immediate next move should be downward toward the target. The robot should prioritize moving down since that's the primary direction needed.",
+    "latency_s": 2.476933240890503,
+    "js_div": 0.005285745572395752,
+    "cosine_sim": 0.9982161274699082,
     "argmax_agree": 1.0,
-    "rubric_mae": 0.1904666666666667
+    "rubric_mae": 0.0004666666666666708
   },
   {
     "start": [
-      1,
-      6
+      3,
+      1
     ],
     "cur": [
-      1,
-      4
+      4,
+      2
     ],
-    "steps_taken": 3,
-    "obstacle_hits": 1,
-    "rule_probs": [
-      0.0031000130640371788,
-      0.0539765224635172,
-      0.0031000130640371788,
-      0.9398234514084085
-    ],
-    "llm_probs": [
-      0.02,
-      0.02,
-      0.96,
-      0.0
-    ],
-    "sw_rubric": {
-      "reached_target": 0.0,
-      "closeness": 0.2857,
-      "avoided_damage": 0.8,
-      "path_efficiency": 0.6667
-    },
-    "llm_rubric": {
-      "reached_target": 0.0,
-      "closeness": 0.4,
-      "avoided_damage": 0.8,
-      "path_efficiency": 0.7
-    },
-    "llm_reasoning": "The robot is at (1,4) and the target (red circle/sofa) is at (4,4). The robot needs to move down 3 cells to reach the target. The robot is directly above the target in the same column, so the optimal path is straight down. So far the robot has taken 3 steps and hit a wall once, suggesting some initial inefficiency or exploration. The robot is currently at row 1, col 4, which is 3 moves away from the target at row 4, col 4. This is reasonably close but not at the target yet. The direct path down appears clear (cells at rows 2, 3 are traversable based on the map). The robot should prioritize moving down to reach the target efficiently.",
-    "latency_s": 3.559717893600464,
-    "js_div": 0.6565636580812071,
-    "cosine_sim": 0.004554203708492214,
-    "argmax_agree": 0.0,
-    "rubric_mae": 0.0492
-  },
-  {
-    "start": [
-      1,
-      5
-    ],
-    "cur": [
-      2,
-      3
-    ],
-    "steps_taken": 3,
+    "steps_taken": 2,
     "obstacle_hits": 0,
     "rule_probs": [
-      0.05397652246351719,
-      0.003100013064037178,
-      0.9398234514084084,
-      0.003100013064037178
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
     ],
     "llm_probs": [
       0.0,
-      0.15,
-      0.85,
+      1.0,
+      0.0,
       0.0
     ],
     "sw_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.5714,
+      "closeness": 0.7143,
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.5,
+      "closeness": 0.67,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.75
+      "path_efficiency": 1.0
     },
-    "llm_reasoning": "The robot is currently at (2, 3) and needs to reach the target 'sofa' at (4, 4). The Manhattan distance is |4-2| + |4-3| = 2 + 1 = 3 cells. The robot has taken 3 steps with 0 wall collisions, indicating efficient navigation so far. From the current position, the robot needs to move down 2 rows and right 1 column. The most direct path would be to move down, then down again, then right (or right then down twice). The optimal next move is DOWN to approach the target. The robot is relatively close to the target and has avoided all obstacles so far, maintaining good path efficiency.",
-    "latency_s": 2.5567359924316406,
-    "js_div": 0.06639031552495311,
-    "cosine_sim": 0.983725029687293,
+    "llm_reasoning": "Robot is at (4,2), target sofa is at (4,4). They are on the same row, with the target 2 steps to the right. The robot has taken 2 steps with 0 collisions, suggesting a reasonable path so far. The most direct path is simply moving right twice to reach the target. Current distance is 2 cells away. Path efficiency has been good (no wasted moves yet). Avoided all obstacles and walls so far.",
+    "latency_s": 2.4738879203796387,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
     "argmax_agree": 1.0,
-    "rubric_mae": 0.10713333333333334
+    "rubric_mae": 0.01476666666666667
   },
   {
     "start": [
-      4,
+      3,
       1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (4,2) and the target sofa is at (4,4), both on the same row. The robot is 2 cells away horizontally (directly left of target). The optimal path is simply to move right twice. The robot has taken 2 steps so far without hitting any walls, suggesting it has been moving efficiently. The robot should continue moving right toward the target. This is a straightforward horizontal navigation with no obstacles blocking the direct path.",
+    "latency_s": 2.1779799461364746,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
+  },
+  {
+    "start": [
+      3,
+      1
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.0,
+      0.5,
+      0.5,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.85,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (3,3) and the target sofa is at (4,4). The robot needs to move down and right to reach the target. Currently, the robot is 1 cell away diagonally from the target. The most direct path would be to move down 1 cell and right 1 cell. The robot has not bumped any walls yet. The path taken so far (2 steps) appears reasonable for reaching the target. Next move should be down or right to get closer to the target at (4,4).",
+    "latency_s": 3.0218758583068848,
+    "js_div": 0.019202610098224018,
+    "cosine_sim": 0.9983548159918225,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.07856666666666663
+  },
+  {
+    "start": [
+      3,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (4, 2) and the target sofa is at (4, 4), on the same row. The robot is 2 cells away horizontally (west of target). The optimal path is simply to move right twice. The robot has taken 2 steps with 0 wall collisions, suggesting efficient movement so far. To reach the target, the robot should continue moving right. This is a straightforward navigation task with a clear 2-step optimal solution.",
+    "latency_s": 2.2454731464385986,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (4, 2) and the target sofa is at (4, 4), both on the same row. The robot needs to move 2 cells to the right. The robot has taken 1 step and hasn't bumped any walls. The path to the target is clear (no obstacles blocking the direct route). The robot should continue moving right toward the target.",
+    "latency_s": 1.7829070091247559,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      3,
+      2
     ],
     "cur": [
       4,
@@ -244,12 +1420,138 @@
       "avoided_damage": 1.0,
       "path_efficiency": 0.9
     },
-    "llm_reasoning": "The robot is at (4,2) and the target (sofa) is at (4,4). The robot needs to move 2 cells to the right to reach the target. The path is clear and straightforward - no walls block the direct horizontal route. The robot has taken 1 step so far without hitting any walls. The most efficient action is to move right to get closer to the target on the same row.",
-    "latency_s": 2.058279037475586,
+    "llm_reasoning": "The robot is at (4,2) and needs to reach the target 'sofa' at (4,4). The target is 2 cells to the right on the same row. The robot has taken 1 step so far with 0 wall collisions, indicating a clean start. The most direct path would be to move right twice. Currently the robot is moderately close to the target, with a clear, efficient path available (moving right along row 4 which is open). The path is nearly optimal given the small distance. No obstacles block the direct rightward path.",
+    "latency_s": 2.4615871906280518,
     "js_div": 0.038099275792519996,
     "cosine_sim": 0.9967123386140659,
     "argmax_agree": 1.0,
     "rubric_mae": 0.0481
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      3,
+      1
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.0016438306929670045,
+      0.49835616930703297,
+      0.49835616930703297,
+      0.0016438306929670045
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "Robot is at (3,1) and target is at (4,4). The robot needs to move right and down to reach the target. Currently, the robot is 6 steps away (Manhattan distance: |4-3| + |4-1| = 1 + 3 = 4 steps minimum). The robot has not hit any walls yet and took 1 step to get here. The optimal path would be to move right 3 times and down 1 time, for a total of 4 moves. Since only 1 step has been taken so far, the path efficiency is good. The robot should continue moving right toward the target, as this is the most direct route given the wall configuration.",
+    "latency_s": 2.616278886795044,
+    "js_div": 0.2166653974642509,
+    "cosine_sim": 0.7071029345074712,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.009533333333333319
+  },
+  {
+    "start": [
+      3,
+      2
+    ],
+    "cur": [
+      3,
+      3
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.027156633066320313,
+      0.4728433669336797,
+      0.4728433669336797,
+      0.027156633066320313
+    ],
+    "llm_probs": [
+      0.05,
+      0.1,
+      0.8,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.86,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.95
+    },
+    "llm_reasoning": "The robot (blue circle at row 3, col 3) needs to reach the target (red circle at row 4, col 4). Currently, the robot is 1 step away diagonally from the target. The most direct path would be to move down and right. Given the robot is at (3,3) and the target is at (4,4), moving down would place it at (4,3), and then right would reach (4,4). The robot has taken 1 step so far with 0 wall collisions, indicating efficient navigation. The path appears to be nearly optimal since the robot needs to travel only 2 more moves to reach the target. The distractor objects (orange circles) should be ignored as they are not the goal.",
+    "latency_s": 2.7983338832855225,
+    "js_div": 0.09059592222872564,
+    "cosine_sim": 0.7900496433037714,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.06523333333333332
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      4,
+      6
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.0539765224635172,
+      0.0031000130640371788,
+      0.0031000130640371788,
+      0.9398234514084085
+    ],
+    "llm_probs": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at position (4, 6) and the target is at (4, 4). The robot is 2 cells to the right of the target on the same row. The optimal path is to move left twice to reach the target. The robot has taken 1 step so far with 0 wall collisions, indicating good navigation so far. The most direct route requires moving left 2 cells, which is efficient. The robot should move left next.",
+    "latency_s": 2.175994873046875,
+    "js_div": 0.021322347169715657,
+    "cosine_sim": 0.9983439896389088,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
   },
   {
     "start": [
@@ -286,12 +1588,936 @@
       "avoided_damage": 1.0,
       "path_efficiency": 0.95
     },
-    "llm_reasoning": "The robot is at (4,6) and the target (sofa) is at (4,4), both on the same row. The robot needs to move 2 cells to the left to reach the target. The optimal path is simply: left, left. So far, the robot has taken 1 step and hasn't bumped any walls, suggesting it's been following a reasonable trajectory. The robot is very close to the target (only 2 cells away horizontally with no obstacles between them). The path taken so far appears efficient given the starting position.",
-    "latency_s": 2.574069023132324,
+    "llm_reasoning": "Robot is at (4,6), target sofa is at (4,4). The robot is 2 steps away horizontally (same row). The direct path is to move left twice to reach the target. The robot has taken 1 step so far with 0 wall collisions, showing good navigation. The most efficient route is simply to move left (twice) to reach the target. Currently 2 cells away from the target.",
+    "latency_s": 2.1303911209106445,
     "js_div": 0.021322347169715657,
     "cosine_sim": 0.9983439896389088,
     "argmax_agree": 1.0,
     "rubric_mae": 0.028566666666666667
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      4,
+      6
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.0539765224635172,
+      0.0031000130640371788,
+      0.0031000130640371788,
+      0.9398234514084085
+    ],
+    "llm_probs": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (4,6) and the target (sofa) is at (4,4). They are on the same row, with the robot 2 cells to the right of the target. The optimal path is to move left twice to reach the target. The robot has taken 1 step so far without hitting any walls, suggesting a sensible initial move. The most efficient next action is to move left toward the target. The robot is relatively close to the target (distance of 2 cells) and should continue moving left.",
+    "latency_s": 2.3827409744262695,
+    "js_div": 0.021322347169715657,
+    "cosine_sim": 0.9983439896389088,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04523333333333331
+  },
+  {
+    "start": [
+      3,
+      6
+    ],
+    "cur": [
+      3,
+      5
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.0016006482921935709,
+      0.02787002077573843,
+      0.485264665466034,
+      0.485264665466034
+    ],
+    "llm_probs": [
+      0.0,
+      0.0,
+      0.6,
+      0.4
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot at (3,5) needs to reach the target sofa at (4,4). The Manhattan distance is 2 cells: 1 down and 1 left. The robot has not bumped any walls so far and appears to be taking a direct path. From the start image, the robot (blue) is above-right of the target (red), and in the goal image, the robot has moved down and left to reach the target position. The next logical move should be to move down or left (preferably down since the target is directly below). The path looks efficient and unobstructed.",
+    "latency_s": 3.1118340492248535,
+    "js_div": 0.015308161631883376,
+    "cosine_sim": 0.9797704011545021,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.10476666666666667
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot (blue dot) is at position (4, 2) and needs to reach the target sofa (red dot) at position (4, 4). Both are on the same row, so the goal is directly to the right. The robot needs to move 2 cells right. The robot has taken 1 step so far with 0 wall collisions, indicating good navigation. The most efficient path is simply to move right twice. The robot is relatively close to the target (2 cells away on the same row).",
+    "latency_s": 2.253103256225586,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot (blue circle at row 4, col 2) needs to reach the target sofa (red circle at row 4, col 4). The robot is currently 2 cells away horizontally (same row). The optimal path is simply to move right twice. The robot has taken 1 step so far with 0 wall collisions, indicating it has been moving efficiently. From the current position, moving right is the clearly correct next action. There are no obstacles blocking the direct path to the target on row 4.",
+    "latency_s": 2.466933012008667,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot (blue circle) is at position (4,2) and the target sofa (red circle in start image, blue circle in goal image) is at (4,4). The robot needs to move right 2 cells to reach the target. The robot has taken 1 step so far with 0 wall bumps, indicating good navigation so far. The straight-line distance to target is minimal (2 cells). The optimal path is simply to move right twice. The robot is very close to the target and moving efficiently toward it.",
+    "latency_s": 2.262544870376587,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
+  },
+  {
+    "start": [
+      4,
+      1
+    ],
+    "cur": [
+      4,
+      2
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.05136333525464558,
+      0.8943233986127138,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (4, 2) and the target (sofa) is at (4, 4), both on the same row. The robot needs to move 2 cells to the right to reach the target. The robot has taken 1 step so far with 0 wall bumps, indicating it has avoided obstacles well. The shortest path requires 2 moves right. The robot is relatively close to the target (distance of 2 cells). Since the target is directly to the right with no obstacles between them, the optimal action is to move right.",
+    "latency_s": 2.2107388973236084,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.9967123386140659,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "llm_probs": [
+      0.85,
+      0.1,
+      0.0,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at position (6, 3) and needs to reach the target sofa at (4, 4). The robot is 2 steps away (1 row up, 1 column right). It has taken 2 steps so far with 0 wall collisions, indicating efficient pathfinding. Looking at the grid, the robot can move up to (5, 3) then right to (4, 4) to reach the target. The direct path is clear with no obstacles blocking the way. The robot should prioritize moving up first, as it needs to reduce the row distance from 6 to 4.",
+    "latency_s": 2.280596971511841,
+    "js_div": 0.48229884220299973,
+    "cosine_sim": 0.12305812048555434,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "llm_probs": [
+      0.85,
+      0.1,
+      0.0,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at position (6, 3) and the target (sofa, shown in red) is at position (4, 4). The robot needs to move 2 rows up and 1 column right. The robot has taken 2 steps with 0 wall collisions, indicating it has been moving efficiently so far. Looking at the map, there is a clear path: the robot can move up from row 6 to row 5, then up again to row 4, then right to column 4. The next optimal move is to go UP, moving from (6, 3) toward (4, 3), which is directly below the target. This is on the shortest path with no obstacles blocking the way.",
+    "latency_s": 2.953207015991211,
+    "js_div": 0.48229884220299973,
+    "cosine_sim": 0.12305812048555434,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09286666666666665
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "llm_probs": [
+      0.7,
+      0.25,
+      0.0,
+      0.05
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.55,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "The robot is at (6,3) and the target is at (4,4). The robot needs to move up 2 rows and right 1 column. Current distance is Manhattan distance of 3 cells. The robot has taken 2 steps with 0 wall collisions, suggesting it's been moving efficiently so far. To reach the target, the robot should move up toward row 4, then adjust right to column 4. Moving up is the most direct path forward.",
+    "latency_s": 2.403334856033325,
+    "js_div": 0.3413460883000302,
+    "cosine_sim": 0.34196475305784574,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.057133333333333335
+  },
+  {
+    "start": [
+      6,
+      1
+    ],
+    "cur": [
+      6,
+      3
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.003100013064037178,
+      0.9398234514084084,
+      0.003100013064037178,
+      0.05397652246351719
+    ],
+    "llm_probs": [
+      0.9,
+      0.08,
+      0.01,
+      0.01
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5714,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "The robot is at (6, 3) and the target sofa is at (4, 4). The robot needs to move 2 steps up and 1 step right to reach the target. Currently at Manhattan distance 3 from the target. The robot has taken 2 steps with 0 wall collisions, suggesting efficient pathfinding so far. The most direct route would be to move up twice then right once, or right then up twice. The robot should prioritize moving up since it's 2 steps away in that direction. Moving up is clearly the optimal next action.",
+    "latency_s": 2.398467779159546,
+    "js_div": 0.5251509338542408,
+    "cosine_sim": 0.09233299588690944,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.10713333333333334
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target (red sofa) is at (4,4). They are in the same column (column 4), so the robot just needs to move up 2 cells to reach the target. The robot has taken 2 steps and bumped 0 walls, indicating efficient navigation so far. The direct path up is clear (no walls blocking between rows 6 and 4 in column 4). The robot should continue moving up toward the target.",
+    "latency_s": 1.989975929260254,
+    "js_div": 0.008566832620557983,
+    "cosine_sim": 0.9986593884207197,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04523333333333331
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target sofa is at (4,4). They share the same column, so the robot only needs to move up 2 rows to reach the target. The robot has taken 2 steps with 0 wall collisions, indicating good navigation so far. The most direct path would be straight up. The robot is reasonably close to the target (distance of 2 cells). This is an efficient, straightforward route.",
+    "latency_s": 2.132614850997925,
+    "js_div": 0.008566832620557983,
+    "cosine_sim": 0.9986593884207197,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04523333333333331
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target (red sofa) is at (4,4). The robot needs to move up 2 cells to reach the target. The robot has taken 2 steps so far without hitting any walls, indicating good obstacle avoidance. The direct path up is clear based on the map - cells (5,4) and (4,4) are both free. This is the shortest possible route (2 more moves needed). The robot should move up to get closer to the target.",
+    "latency_s": 3.1989901065826416,
+    "js_div": 0.008566832620557983,
+    "cosine_sim": 0.9986593884207197,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      2
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at position (6,4) and the target 'sofa' is at position (4,4). The robot needs to move up 2 cells to reach the target. The robot has taken 2 steps so far without hitting any walls, showing good navigation. The optimal path is directly upward. The robot is currently 2 cells away from the target (Manhattan distance). The most efficient next move is UP to get closer to the target.",
+    "latency_s": 2.150967836380005,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04523333333333331
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at position (6, 4) and the target (sofa) is at position (4, 4). The robot is directly below the target and needs to move upward. The Manhattan distance is 2 cells. The robot has not hit any walls so far (0 bumps). Since only 1 step has been taken to reach a position 2 cells away from the target, the path is efficient so far. The robot should move up toward the target.",
+    "latency_s": 2.220339059829712,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target (sofa/red circle) is at (4,4). They are in the same column, so the robot needs to move straight up 2 cells to reach the target. The path is clear - no walls block the direct vertical route. The robot has taken 1 step so far with 0 wall collisions, indicating efficient pathfinding so far. The optimal next move is up.",
+    "latency_s": 2.262787103652954,
+    "js_div": 0.008566832620557983,
+    "cosine_sim": 0.9986593884207197,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target sofa is at (4,4). They are in the same column (column 4), so the robot only needs to move directly upward 2 steps to reach the target. The robot has taken 1 step so far and hasn't hit any walls, showing good path efficiency. The shortest path is simply moving up twice. The robot is currently 2 cells away from the target vertically and has a clear line of movement upward.",
+    "latency_s": 2.176957845687866,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      3
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.5,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6, 4) and the target 'sofa' (red circle) is at (4, 4). The robot is directly below the target, 2 rows away vertically, same column. This is a very straightforward path: move up twice to reach the target. The robot has taken 1 step so far and hasn't hit any walls. The optimal path is 2 moves (up, up), and the robot is currently 2 Manhattan distance units away. There are no obstacles blocking the direct upward path - row 5 column 4 is a free cell, and row 4 column 4 is the target. The robot should move up to get closer to the target.",
+    "latency_s": 2.7068212032318115,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.07143333333333335
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.02,
+      0.01
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.67,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6, 4) and the target sofa is at (4, 4), directly 2 cells above. The robot has taken 1 step so far with 0 wall collisions, showing good obstacle avoidance. The most direct path is simply to move up twice. The robot should move up to get closer to the target.",
+    "latency_s": 1.931363821029663,
+    "js_div": 0.015166109397871894,
+    "cosine_sim": 0.99809171204552,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.02,
+      0.01,
+      0.02
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.9
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target (red sofa) is at (4,4). Both are in the same column, so the robot needs to move up 2 rows. The robot has taken 1 step and hasn't hit any walls, indicating good navigation so far. The direct path upward is clear (row 5, col 4 is free; row 4, col 4 is the target). The most efficient move is to go UP. The robot is close to the target (2 steps away) and should continue moving toward it directly.",
+    "latency_s": 3.21879506111145,
+    "js_div": 0.008566832620557983,
+    "cosine_sim": 0.9986593884207197,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.04523333333333331
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      6
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.0032661851642464025,
+      0.0032661851642464025,
+      0.0032661851642464025,
+      0.9902014445072609
+    ],
+    "llm_probs": [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.4286,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.3,
+      "avoided_damage": 1.0,
+      "path_efficiency": 0.85
+    },
+    "llm_reasoning": "The robot is at position (6,6) and needs to reach the target (sofa) at position (4,4). The target is 2 rows up and 2 columns left. The robot has taken 1 step so far without hitting any walls. From the current position, the shortest path would be to move up twice and left twice (or any permutation that totals these moves). The robot should immediately start moving toward the target. Given the straight corridor available, moving up is the most direct first step toward the target location. The robot has not hit walls yet, and the path is clear upward from (6,6) to (4,4).",
+    "latency_s": 2.6490228176116943,
+    "js_div": 0.20790158992717217,
+    "cosine_sim": 0.7094275990611983,
+    "argmax_agree": 0.0,
+    "rubric_mae": 0.09286666666666667
+  },
+  {
+    "start": [
+      6,
+      5
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 1,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      0.95,
+      0.025,
+      0.0,
+      0.025
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.75,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot (A) is at position (6, 4) and the target (T) is at position (4, 4). They are in the same column, with the target 2 cells directly above the robot. The robot needs to move upward. The robot has not bumped any walls yet and is taking an efficient path. The Manhattan distance to target is 2 cells, which is minimal given the straight path available.",
+    "latency_s": 2.0516748428344727,
+    "js_div": 0.006088403323425191,
+    "cosine_sim": 0.9990335581073286,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.011899999999999985
   },
   {
     "start": [
@@ -328,8 +2554,8 @@
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
-    "llm_reasoning": "The robot is at (6,4) and needs to reach the target sofa at (4,4). They are in the same column, separated by 2 rows. The robot should move up twice to reach the target. Currently at row 6, target at row 4 - a straight upward path. The robot has taken 2 steps so far and hasn't hit any walls, indicating good path efficiency so far. The most direct route is straight up, which appears to be available in the map.",
-    "latency_s": 2.327299118041992,
+    "llm_reasoning": "The robot is at (6,4) and the target (sofa) is at (4,4). Both are in the same column, so the robot needs to move directly upward 2 rows to reach the target. The robot has taken 2 steps so far and hasn't hit any walls, indicating efficient pathfinding so far. The direct path up is clear of obstacles (checking row 5 and row 4 in column 4 shows no walls blocking the path). The robot is 2 cells away from the target and moving straight toward it represents optimal pathfinding.",
+    "latency_s": 2.2701566219329834,
     "js_div": 0.038099275792519996,
     "cosine_sim": 0.996712338614066,
     "argmax_agree": 1.0,
@@ -337,86 +2563,128 @@
   },
   {
     "start": [
-      1,
-      4
+      6,
+      6
     ],
     "cur": [
-      2,
-      3
+      6,
+      4
     ],
     "steps_taken": 2,
     "obstacle_hits": 0,
     "rule_probs": [
-      0.05397652246351719,
-      0.003100013064037178,
-      0.9398234514084084,
-      0.003100013064037178
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
     ],
     "llm_probs": [
+      1.0,
       0.0,
-      0.05,
-      0.9,
-      0.05
+      0.0,
+      0.0
     ],
     "sw_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.5714,
+      "closeness": 0.7143,
       "avoided_damage": 1.0,
       "path_efficiency": 1.0
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.5,
+      "closeness": 0.67,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.9
+      "path_efficiency": 1.0
     },
-    "llm_reasoning": "Robot is at (2,3) and target is at (4,4). The robot needs to move 2 rows down and 1 column right to reach the target. Current Manhattan distance is 3 cells. The robot has taken 2 steps with 0 wall bumps, indicating a clean path so far. From the current position, the robot should move down to get closer to the target. The most efficient path would be: down, down, right (3 moves total). The robot is making progress toward the target with no wasted moves.",
-    "latency_s": 2.7312870025634766,
-    "js_div": 0.04391433130231695,
-    "cosine_sim": 0.9956416429700617,
+    "llm_reasoning": "The robot is at position (6, 4) and the target sofa is at position (4, 4) - directly 2 cells above. The robot has taken 2 steps so far with 0 wall collisions, indicating efficient pathfinding. The optimal route is simply to move straight up twice more. The robot should move up to reach the target efficiently.",
+    "latency_s": 2.015001058578491,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
     "argmax_agree": 1.0,
-    "rubric_mae": 0.057133333333333335
+    "rubric_mae": 0.01476666666666667
   },
   {
     "start": [
       6,
-      1
+      6
     ],
     "cur": [
       6,
-      1
+      4
     ],
     "steps_taken": 2,
     "obstacle_hits": 0,
     "rule_probs": [
-      0.003266185164246402,
-      0.9902014445072607,
-      0.003266185164246402,
-      0.003266185164246402
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
     ],
     "llm_probs": [
-      0.7,
-      0.2,
-      0.05,
-      0.05
+      1.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "sw_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.2857,
+      "closeness": 0.7143,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.0
+      "path_efficiency": 1.0
     },
     "llm_rubric": {
       "reached_target": 0.0,
-      "closeness": 0.38,
+      "closeness": 0.67,
       "avoided_damage": 1.0,
-      "path_efficiency": 0.83
+      "path_efficiency": 1.0
     },
-    "llm_reasoning": "The robot is at (6,1) and needs to reach the target 'sofa' at (4,4). The current Manhattan distance is |6-4| + |1-4| = 2 + 3 = 5. With 2 steps taken so far and 0 wall bumps, the robot has made efficient progress. To reach the target optimally, the robot needs to move up 2 rows and right 3 columns. The next logical move is upward (to row 5) which brings the robot closer to the target while staying on a sensible path.",
-    "latency_s": 3.098762035369873,
-    "js_div": 0.40102319628682936,
-    "cosine_sim": 0.27703754891964233,
-    "argmax_agree": 0.0,
-    "rubric_mae": 0.3081
+    "llm_reasoning": "The robot is at position (6, 4) and the target 'sofa' is at (4, 4). The robot needs to move 2 cells upward to reach the target. The robot has taken 2 steps so far without hitting any walls, showing good navigation so far. The most direct path is simply moving up twice. The robot is currently in a column-aligned position with the target (same column 4), so moving straight up is optimal. There is a clear, unobstructed path upward from row 6 to row 4.",
+    "latency_s": 2.5469188690185547,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.01476666666666667
+  },
+  {
+    "start": [
+      6,
+      6
+    ],
+    "cur": [
+      6,
+      4
+    ],
+    "steps_taken": 2,
+    "obstacle_hits": 0,
+    "rule_probs": [
+      0.8943233986127138,
+      0.05136333525464558,
+      0.002949930877995047,
+      0.05136333525464558
+    ],
+    "llm_probs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sw_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.7143,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_rubric": {
+      "reached_target": 0.0,
+      "closeness": 0.71,
+      "avoided_damage": 1.0,
+      "path_efficiency": 1.0
+    },
+    "llm_reasoning": "The robot is at (6,4) and the target 'sofa' is at (4,4). They are in the same column, so the robot needs to move upward 2 steps to reach the target. The robot has taken 2 steps so far with 0 collisions, suggesting efficient movement so far. The straight vertical distance is minimal and the optimal path is clear - move up twice. The robot is currently 2 Manhattan distance away from the target. There's a wall barrier at row 5 (####.###), but there's an open cell at (5,4) that allows passage. No obstacles block the direct upward path.",
+    "latency_s": 2.5028939247131348,
+    "js_div": 0.038099275792519996,
+    "cosine_sim": 0.996712338614066,
+    "argmax_agree": 1.0,
+    "rubric_mae": 0.0014333333333333604
   }
 ]

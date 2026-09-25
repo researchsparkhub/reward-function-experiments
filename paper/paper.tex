@@ -44,18 +44,23 @@ zero-shot rule-vs-judge comparison (E1), the addition of natural-language
 instructions with an iterative judge-refinement protocol (E2), the same
 protocol against a deliberately imperfect, REINFORCE-trained policy
 instead of a near-optimal reference (E3), and a distillation study that
-replaces the LLM judge with a learned reward network (E4). Every LLM
-judgment in this study is a real, non-mocked call to Claude Haiku 4.5.
-We find that a zero-shot LLM judge agrees with a hand-written policy on
-the correct next move 80\% of the time; that one to two rounds of
-feedback drive that agreement to 90--100\%, even when the reference
-policy being tracked is itself only 72\% successful; and that a reward
-network distilled from 41 judged examples reproduces the LLM's rubric
-scores closely (mean absolute error 0.076) at a $2327\times$ latency
-reduction, while reproducing its specific best-action choice only 25\%
-of the time. This gap between rubric-level and action-level fidelity is,
-to our knowledge, not reported in prior reward-distillation work and has
-direct implications for how such systems should be evaluated before
+replaces the LLM judge with a learned reward network (E4). E1--E3 each
+evaluate 64 situations (every eligible grid cell, replicated four times
+with independent stochastic rollouts) and report 95\% confidence
+intervals; E4 evaluates 48 held-out situations against a network trained
+on 258 pooled judgments. Every LLM judgment in this study is a real,
+non-mocked call to Claude Haiku 4.5. We find that a zero-shot LLM judge
+agrees with a hand-written policy on the correct next move 78\% of the
+time (95\% CI [67\%, 87\%]); that one to two rounds of feedback drive
+that agreement to 100\%, even when the reference policy being tracked is
+itself only 72\% successful (86\% argmax agreement, CI [75\%, 92\%]);
+and that a reward network distilled from 258 judged examples reproduces
+the LLM's rubric scores closely (mean absolute error 0.058, CI [0.048,
+0.068]) at roughly an $1800\times$ median-latency reduction, while
+reproducing its specific best-action choice only 48\% of the time (CI
+[34\%, 62\%]). This gap between rubric-level and action-level fidelity
+is, to our knowledge, not reported in prior reward-distillation work and
+has direct implications for how such systems should be evaluated before
 deployment.
 \end{abstract}
 
@@ -189,9 +194,9 @@ reference it is given even when that reference is a genuinely suboptimal
 reported for LLM-as-judge reward systems. Third, our distillation study
 (E4) separates two notions of fidelity -- rubric-score agreement and
 action-level (argmax) agreement -- that a single aggregate error metric
-would conflate, showing they can diverge sharply (0.076 mean absolute
-rubric error versus 25\% action agreement on the same held-out
-situations).
+would conflate, showing they can diverge sharply (0.058 mean absolute
+rubric error versus 48\% action agreement on the same held-out
+situations, $n=48$).
 
 \section{Contribution}
 \label{sec:contribution}
@@ -249,10 +254,16 @@ situation in every experiment (Section~\ref{sec:conclusion}).
 
 Every experiment operates on \emph{situations}: tuples of (current cell,
 steps taken so far, obstacles hit so far). A situation is produced by
-sampling a start cell at least 3 moves from the target and rolling a
-reference policy forward for roughly half of its shortest-path distance
-to the target, so that sampled situations are realistic and mid-episode
-rather than only trivial starts or already-solved cases.
+rolling a reference policy forward from a start cell for roughly half of
+its shortest-path distance to the target, so that situations are
+realistic and mid-episode rather than only trivial starts or
+already-solved cases. Sixteen of the 26 free cells are at least 3 moves
+from the target; rather than sampling a handful of them once, every
+eligible cell is rolled out four independent times with distinct random
+seeds, giving 64 situations per experiment for E1--E3 (three replicates,
+48 situations, for E4's held-out set) -- a statistically reasonable
+sample from this map, discussed further as a limitation in
+Section~\ref{sec:conclusion}.
 
 For a given situation, two quantities are computed. The first is an
 \emph{action-probability distribution} over the four moves. The second
@@ -303,13 +314,13 @@ Every call in E1--E4 is a genuine network call, not a cached or mocked
 response.
 
 \subsection{E1: zero-shot judge vs.\ rule-based policy}
-For 10 sampled situations, the judge is given no instruction and is
-called once per situation, with exactly the information available to
-the rule-based policy, isolating its raw, language-free agreement with a
+For all 64 situations, the judge is given no instruction and is called
+once per situation, with exactly the information available to the
+rule-based policy, isolating its raw, language-free agreement with a
 geometric reference.
 
 \subsection{E2: language and iterative refinement, rule-based reference}
-For a fresh sample of 10 situations, the judge additionally receives an
+For a fresh set of 64 situations, the judge additionally receives an
 instruction and is iteratively re-queried: after each answer we compute
 the Jensen--Shannon (JS) divergence between its action distribution and
 the rule-based policy's and, if it exceeds $\tau=0.05$, feed that
@@ -319,42 +330,46 @@ effective alignment mechanism, and how many rounds it takes.
 
 \subsection{E3: language and iterative refinement, neural-network
 reference}
-The protocol is identical to E2, but the policy the judge is steered
-toward is the 72\%-success neural network (Section~\ref{subsec:nn})
-rather than the near-optimal rule -- testing whether refinement still
-converges against an imperfect target, and whether doing so costs
-agreement with the independently-correct rule-based answer.
+The protocol is identical to E2 on another fresh set of 64 situations,
+but the policy the judge is steered toward is the 72\%-success neural
+network (Section~\ref{subsec:nn}) rather than the near-optimal rule --
+testing whether refinement still converges against an imperfect target,
+and whether doing so costs agreement with the independently-correct
+rule-based answer.
 
 \subsection{E4: distilling a reward network}
-We pool every (situation, LLM rubric) pair from E1--E3 -- 41 pairs,
+We pool every (situation, LLM rubric) pair from E1--E3 -- 258 pairs,
 including every intermediate refinement round -- and fit a small
 regression network (two hidden layers, 32/16 units, $\tanh$) to predict
 the four rubric fields from six state features (normalised position,
 offset to target, obstacle-hit count, step count). Action probabilities
 are then derived from predicted closeness the same way the rule-based
 policy derives them from true distance: a softmax over the predicted
-closeness of each next state. We evaluate on 8 fresh held-out
-situations, each also given one fresh real LLM call, so the network's
-output can be compared directly against a judgment it never trained on.
+closeness of each next state. We evaluate on 48 fresh held-out
+situations (three replicates per eligible cell), each also given one
+fresh real LLM call, so the network's output can be compared directly
+against a judgment it never trained on.
 
 \section{Results and Analysis}
 \label{sec:results}
 
 \subsection{E1: rule-based policy vs.\ zero-shot LLM judge}
-The LLM judge agrees with the rule-based policy's preferred action 80\%
-of the time (8/10 situations), with mean cosine similarity 0.805 and
-mean JS divergence 0.151 between the two action distributions
-(Table~\ref{tab:summary}); rubric agreement is closer still (mean
-absolute error 0.097). Both disagreements occurred at cells adjacent to
-a wall gap, where the judge misjudged which side of a wall segment was
-passable despite the attached images -- for example, at one cell the
-rule-based policy places 0\% probability on the ``down'' move because it
-is blocked, while the judge assigns it 0.55. Fig.~\ref{fig:e1} overlays
-the two policies' preferred action at every sampled cell; the two fields
-agree almost everywhere except at these wall-adjacent cells. This
-suggests that a modern LLM's failure mode on this task is a specific,
-correctable perceptual error (reading the map), not a conceptual
-misunderstanding of what ``closer to the target'' means.
+The LLM judge agrees with the rule-based policy's preferred action 78\%
+of the time (50/64 situations, 95\% CI [67\%, 87\%]), with mean cosine
+similarity 0.878 and mean JS divergence 0.095 (CI [0.062, 0.128])
+between the two action distributions (Table~\ref{tab:summary}); rubric
+agreement is closer still (mean absolute error 0.053, CI [0.044,
+0.062]). Disagreements cluster at cells adjacent to a wall gap, where
+the judge sometimes misjudges which side of a wall segment is passable
+despite the attached images -- for example, at one cell the rule-based
+policy places 0\% probability on the ``down'' move because it is
+blocked, while the judge assigns it 0.55. Fig.~\ref{fig:e1} overlays the
+two policies' preferred action at every cell visited across the 64
+situations; the two fields agree almost everywhere except at these
+wall-adjacent cells. This suggests that a modern LLM's failure mode on
+this task is a specific, correctable perceptual error (reading the
+map), not a conceptual misunderstanding of what ``closer to the
+target'' means.
 
 \begin{figure}[t]
   \centering
@@ -366,10 +381,11 @@ misunderstanding of what ``closer to the target'' means.
 
 \subsection{E2: language and iterative refinement toward the
 rule-based policy}
-All 10 situations converge within the 4-round budget (convergence rate
-1.0), in a mean of 1.3 rounds. Final-round agreement with the rule-based
-policy rises sharply relative to E1: mean cosine similarity 0.998, mean
-JS divergence 0.019, and 100\% argmax agreement (Table~\ref{tab:summary}).
+All 64 situations converge within the 4-round budget (convergence rate
+100\%, CI [94\%, 100\%]), in a mean of 1.34 rounds (CI [1.23, 1.46]).
+Final-round agreement with the rule-based policy rises sharply relative
+to E1: mean cosine similarity 0.998, mean JS divergence 0.017 (CI
+[0.014, 0.020]), and 100\% argmax agreement (Table~\ref{tab:summary}).
 The single largest case is a cell where a zero-shot JS divergence of
 0.43 falls to 0.01 after just one round of feedback. The effect is not
 merely the judge restating what the images already showed: the same
@@ -381,42 +397,57 @@ concrete feedback signal is doing real corrective work.
 \subsection{E3: language and iterative refinement toward an imperfect
 neural-network policy}
 Convergence is measurably harder against the imperfect reference: mean
-iterations rises from 1.3 (E2) to 1.8, and one of the 10 situations
-(10\%) fails to converge within the round budget, compared to 0\% in
-E2. Final agreement with the neural-network policy is nonetheless high
-(cosine similarity 0.921, argmax agreement 70\%) -- but the same
-converged judgments now agree with the independently-computed
-rule-based policy at only 0.799 cosine similarity, down from 0.998 in
-E2. In other words, the judge is not converging toward some
-policy-independent notion of correctness; it is converging toward
-\emph{whichever reference it is steered toward}, including one that is
-demonstrably suboptimal. This is a direct empirical illustration of why
-iterative-refinement alignment is only as trustworthy as the reference
-signal used to drive it.
+iterations rises from 1.34 (E2) to 1.69 (CI [1.51, 1.87]) -- confidence
+intervals that do not overlap. All 64 situations still eventually
+converge within the round budget. Final agreement with the
+neural-network policy is nonetheless high (cosine similarity 0.993,
+argmax agreement 86\%, CI [75\%, 92\%]) -- but the same converged
+judgments now agree with the independently-computed rule-based policy
+at only 0.768 cosine similarity, down from 0.998 in E2. In other words,
+the judge is not converging toward some policy-independent notion of
+correctness; it is converging toward \emph{whichever reference it is
+steered toward}, including one that is demonstrably suboptimal. This is
+a direct empirical illustration of why iterative-refinement alignment is
+only as trustworthy as the reference signal used to drive it.
 
 \subsection{E4: distilling the LLM judge into a reward network}
 The distilled reward network reaches in-sample rubric mean absolute
-error (MAE) 0.089 on its 41-example training pool and, on 8 held-out
+error (MAE) 0.069 on its 258-example training pool and, on 48 held-out
 situations each checked against a fresh real LLM call, tracks the LLM's
-rubric scores nearly as closely out of sample (MAE 0.076), indicating it
-has not simply memorised the training situations. At the same time it
-runs at 1.1\,ms mean latency versus 2.56\,s for a real LLM call -- a
-$2327\times$ speedup. However, the network's argmax action matches the
-LLM judge's argmax action only 25\% of the time (JS divergence 0.188 on
-the same held-out set), markedly worse than the LLM-vs-rule agreement
-measured directly elsewhere in this study (JS divergence 0.030,
-Table~\ref{tab:summary}). The closeness rubric tracks the real judge well
-on each held-out cell in aggregate, yet the softmax used to turn
-predicted closeness into an action distribution is sensitive to exactly
-the small regression errors that a rubric-level MAE of 0.076 permits,
-because neighbouring cells' true closeness values are often close
-together. A deployment decision based only on rubric MAE would miss
-this gap.
+rubric scores nearly as closely out of sample (MAE 0.058, CI [0.048,
+0.068]), indicating it has not simply memorised the training situations.
+At the same time it runs at a median 2.4\,ms latency versus 2.44\,s for
+a real LLM call -- roughly an $1800\times$ speedup (we use the median
+because a handful of calls on both sides of this comparison hit
+transient multi-second network delays that would otherwise let a single
+outlier dominate a mean). However, the network's argmax action matches
+the LLM judge's argmax action only 48\% of the time (CI [34\%, 62\%], JS
+divergence 0.232 on the same held-out set), markedly worse than the
+LLM-vs-rule agreement measured directly elsewhere in this study (JS
+divergence 0.086--0.095, Table~\ref{tab:summary}). This is, however, a
+substantial improvement over a smaller 41-pair pilot run of the same
+pipeline, which reached only 25\% argmax agreement -- suggesting the gap
+narrows, without yet closing, as more distillation data becomes
+available. The closeness rubric tracks the real judge well in aggregate
+(Fig.~\ref{fig:e4}), yet the softmax used to turn predicted closeness
+into an action distribution is sensitive to exactly the small regression
+errors that a rubric-level MAE of 0.058 permits, because neighbouring
+cells' true closeness values are often close together. A deployment
+decision based only on rubric MAE would miss this gap.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/e4_rubric_closeness.png}
+  \caption{E4: closeness rubric score, real LLM judge vs.\ distilled
+  reward network, on all 48 held-out situations.}
+  \label{fig:e4}
+\end{figure}
 
 \begin{table}[t]
 \centering
 \small
-\caption{Cross-experiment summary. ``Argmax agree.'' is the fraction of
+\caption{Cross-experiment summary ($n=64$ for E1--E3, $n=48$ held-out
+for E4; brackets are 95\% CIs). ``Argmax agree.'' is the fraction of
 situations where the two compared policies pick the same best action;
 JS div.\ is the Jensen--Shannon divergence between their action
 distributions; rubric MAE is averaged over the closeness,
@@ -426,30 +457,34 @@ avoided-damage, and path-efficiency fields.}
 \toprule
 Exp. & Reference & Instr. & Iters. & JS div. & Argmax \\
 \midrule
-E1 & Rule-based & No & 1 & 0.151 & 0.80 \\
-E2 & Rule-based & Yes & 1.3/4 & 0.019 & 1.00 \\
-E3 & NN (72\%) & Yes & 1.8/4 & 0.043 & 0.70 \\
-E4 & Distilled net & Yes (tr.) & --- & 0.188 & 0.25 \\
+E1 & Rule-based & No & 1 & .095 [.06,.13] & .78 [.67,.87] \\
+E2 & Rule-based & Yes & 1.34/4 & .017 [.01,.02] & 1.00 [.94,1] \\
+E3 & NN (72\%) & Yes & 1.69/4 & .011 [.008,.014] & .86 [.75,.92] \\
+E4 & Distilled net & Yes (tr.) & --- & .232 [.20,.26] & .48 [.34,.62] \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Analysis of results}
-Three patterns emerge from Table~\ref{tab:summary}. First, agreement
-between a real LLM judge and a geometric reference is already high
-without instruction or feedback (E1: 80\% argmax agreement), and its
-error mode is localised and correctable rather than diffuse. Second, one
-or two rounds of feedback closes most of the remaining gap (E2), but the
-same mechanism just as readily aligns the judge with an imperfect
-reference if that is what it is steered toward (E3): convergence rate
-and final divergence measure \emph{steerability}, not correctness, and
-should be interpreted as such. Third, distillation (E4) exposes a gap
-between two fidelity measures often reported as interchangeable:
-rubric-score agreement (MAE 0.076) and action-level agreement (25\%
-argmax match) can diverge sharply for the same model on the same data,
-because a small regression error is amplified by the softmax that
-converts predicted scores into a decision -- a gap a rubric-error-only
-evaluation would not surface.
+Three patterns emerge from Table~\ref{tab:summary}, all backed by 95\%
+confidence intervals rather than single point estimates from a handful
+of trials. First, agreement between a real LLM judge and a geometric
+reference is already high without instruction or feedback (E1: 78\%
+argmax agreement, CI [67\%, 87\%]), and its error mode is localised and
+correctable rather than diffuse. Second, one or two rounds of feedback
+closes most of the remaining gap (E2), but the same mechanism just as
+readily aligns the judge with an imperfect reference if that is what it
+is steered toward (E3), at a measurably higher iteration count (1.69 vs.\
+1.34, non-overlapping CIs): convergence rate and final divergence
+measure \emph{steerability}, not correctness, and should be interpreted
+as such. Third, distillation (E4) exposes a gap between two fidelity
+measures often reported as interchangeable: rubric-score agreement (MAE
+0.058) and action-level agreement (48\% argmax match) can diverge
+sharply for the same model on the same data, because a small regression
+error is amplified by the softmax that converts predicted scores into a
+decision -- a gap a rubric-error-only evaluation would not surface, and
+one that a $6\times$ increase in distillation data (from a 41-pair pilot
+to this 258-pair run) narrowed but did not close.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -476,12 +511,20 @@ This study trades training-pipeline scale -- no PPO, no
 sentence-transformer instruction encoder, no full MiniGrid turn-based
 action space -- for the ability to run every reward source for real,
 including genuine LLM calls, within one tightly controlled comparison.
-Sample sizes are correspondingly small (8--10 held-out situations per
-experiment, 41 training pairs for E4), so the numbers reported here are
-point estimates that demonstrate the methodology rather than a
-large-scale benchmark. Natural next steps include scaling E1--E3 to more
-situations and maps for confidence intervals; training the distilled
-network on more data to test whether the E4 argmax-agreement gap closes;
+Every experiment now evaluates 64 situations (48 held-out for E4),
+drawn from every eligible cell of the map with several independent
+rollout replicates each, which is enough for the 95\% confidence
+intervals reported throughout to make results such as E2 vs.\ E3's
+iteration counts statistically distinguishable rather than an artifact
+of a small sample. The main remaining limitation is that all four
+experiments share a \emph{single} map, so the numbers characterise this
+map's topology -- its particular wall-gap placements, especially --
+without yet showing they generalise across layouts. Natural next steps
+include repeating E1--E3 across multiple, independently generated maps
+to test whether the findings are map-specific or general; training the
+distilled network on substantially more data to test how far the E4
+argmax-agreement gap can be closed, building on the 25\%$\to$48\%
+improvement already seen between a 41-pair pilot and this 258-pair run;
 replacing the automated references with human preference labels to test
 whether iterative refinement also aligns a judge to people; and folding
 the full PPO/sentence-transformer/MiniGrid pipeline back in once a

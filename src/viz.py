@@ -124,14 +124,49 @@ def bar_overlay(labels: list[str], series: dict[str, list[float]], ylabel: str,
 
 
 def line_plot(x, series: dict[str, list[float]], xlabel: str, ylabel: str, title: str,
-              out_path: str):
+              out_path: str, band: dict[str, tuple[list[float], list[float]]] | None = None):
     fig, ax = plt.subplots(figsize=(5.2, 3.2), dpi=140)
     for name, vals in series.items():
         ax.plot(x, vals, marker="o", label=name, linewidth=1.6, markersize=4)
+        if band and name in band:
+            lo, hi = band[name]
+            ax.fill_between(x, lo, hi, alpha=0.15)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_title(title, fontsize=10)
     ax.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.close(fig)
+
+
+def scatter_calibration(x: list[float], y: list[float], xlabel: str, ylabel: str,
+                         title: str, out_path: str):
+    fig, ax = plt.subplots(figsize=(4.6, 4.3), dpi=140)
+    ax.scatter(x, y, alpha=0.55, s=22, color="#2563eb", edgecolor="none")
+    lo, hi = 0.0, 1.0
+    ax.plot([lo, hi], [lo, hi], linestyle="--", color="#9ca3af", linewidth=1.2,
+            label="perfect agreement")
+    ax.set_xlim(lo, hi); ax.set_ylim(lo, hi)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title, fontsize=9, wrap=True)
+    ax.legend(fontsize=8)
+    ax.set_aspect("equal")
+    fig.tight_layout()
+    fig.savefig(out_path)
+    plt.close(fig)
+
+
+def iteration_histogram(counts: list[int], max_iters: int, xlabel: str, ylabel: str,
+                         title: str, out_path: str):
+    fig, ax = plt.subplots(figsize=(5.2, 3.2), dpi=140)
+    bins = np.arange(1, max_iters + 2) - 0.5
+    ax.hist(counts, bins=bins, color="#0f766e", edgecolor="white")
+    ax.set_xticks(range(1, max_iters + 1))
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title, fontsize=10)
     fig.tight_layout()
     fig.savefig(out_path)
     plt.close(fig)
