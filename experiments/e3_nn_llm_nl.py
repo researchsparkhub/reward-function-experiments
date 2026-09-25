@@ -26,7 +26,7 @@ import state_sampler as ss
 import rule_policy as rp  # only for the software rubric ground truth
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e3")
-FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
+FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "paper", "figures")
 REPLICATES = 4  # 16 eligible cells x 4 replicates = 64 situations
 MAX_ITERS = 4
 TOL = 0.05

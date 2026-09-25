@@ -23,7 +23,7 @@ import viz
 import state_sampler as ss
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e1")
-FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
+FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "paper", "figures")
 REPLICATES = 4  # 16 eligible cells x 4 replicates = 64 situations
 RUBRIC_FIELDS = ["closeness", "avoided_damage", "path_efficiency"]
 

@@ -3,14 +3,6 @@ __pycache__/
 .DS_Store
 
 # LaTeX build artifacts (the .pdf is committed; intermediates are not)
-report/*.aux
-report/*.bbl
-report/*.blg
-report/*.log
-report/*.out
-report/*.fls
-report/*.fdb_latexmk
-report/*.synctex.gz
 paper/*.aux
 paper/*.bbl
 paper/*.blg

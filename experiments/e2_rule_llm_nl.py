@@ -25,7 +25,7 @@ import viz
 import state_sampler as ss
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e2")
-FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
+FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "paper", "figures")
 REPLICATES = 4  # 16 eligible cells x 4 replicates = 64 situations
 MAX_ITERS = 4
 TOL = 0.05

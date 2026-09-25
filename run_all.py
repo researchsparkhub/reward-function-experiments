@@ -1,5 +1,5 @@
 """Run E1-E4 in order. Each experiment writes its records/summary JSON to
-results/<exp>/ and its figures to report/figures/. Requires ANTHROPIC_API_KEY
+results/<exp>/ and its figures to paper/figures/. Requires ANTHROPIC_API_KEY
 in the environment (every experiment makes real LLM judge calls)."""
 import os
 import runpy

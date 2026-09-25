@@ -5,12 +5,10 @@ rule-based reward, a real LLM-as-judge reward (Claude Haiku 4.5), and a
 reward network distilled from the LLM's judgments, on a shared 2-D
 gridworld navigation task.
 
-Two write-ups of the same underlying study:
-- [`report/report.pdf`](report/report.pdf) — a 4-page IEEE-format
-  technical report, built from `report/report.tex`.
-- [`paper/paper.pdf`](paper/paper.pdf) — a fuller 5-page paper (Abstract,
-  Introduction, Previous Work, Novelty, Contribution, Experimental
-  Setup, Results and Analysis, Conclusion), built from `paper/paper.tex`.
+Write-up: [`paper/paper.pdf`](paper/paper.pdf) — a 5-page paper
+(Abstract, Introduction, Previous Work, Novelty, Contribution,
+Experimental Setup, Results and Analysis, Conclusion), built from
+`paper/paper.tex`.
 
 ## What's here
 
@@ -43,7 +41,6 @@ src/                  shared modules: gridworld, rule policy, NN policy,
 experiments/          e1_rule_llm.py, e2_rule_llm_nl.py,
                        e3_nn_llm_nl.py, e4_reward_model.py
 results/<e1..e4>/     records.json + summary.json from each run
-report/               4-page IEEE report: report.tex, references.bib, report.pdf, figures/
 paper/                5-page paper: paper.tex, references.bib, paper.pdf, figures/
 run_all.py            runs E1-E4 in order
 ```
@@ -56,15 +53,15 @@ export ANTHROPIC_API_KEY=sk-...
 python run_all.py            # or run experiments/e*.py individually
 ```
 
-Each experiment script is self-contained: it samples a handful of grid
+Each experiment script is self-contained: it builds the full set of grid
 situations, computes the reference policy's action-probabilities and
 rubric, calls the real LLM judge, saves `results/<exp>/{records,summary}.json`,
-and regenerates the figures under `report/figures/` that the report cites.
+and regenerates the figures under `paper/figures/` that the paper cites.
 
-Rebuilding the report after re-running the experiments:
+Rebuilding the paper after re-running the experiments:
 
 ```bash
-cd report && latexmk -pdf report.tex
+cd paper && latexmk -pdf paper.tex
 ```
 
 ## Environment
@@ -73,9 +70,8 @@ One 8x8 grid, walls forming two one-cell-gap bands, a target object
 ("sofa") and two distractors ("chair", "cube"), four cardinal actions
 {up, right, down, left}. See `src/gridworld.py`. This is a deliberately
 lightweight stand-in for the fuller MiniGrid/PPO/sentence-transformer
-pipeline described in the companion project draft — see the report's
-Limitations section for why, and what a larger-scale follow-up would add
-back.
+pipeline described in the companion project draft — see the paper's
+Conclusion for why, and what a larger-scale follow-up would add back.
 
 ## Results summary
 

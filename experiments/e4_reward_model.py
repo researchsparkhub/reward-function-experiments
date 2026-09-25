@@ -26,7 +26,7 @@ import viz
 import state_sampler as ss
 
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "results", "e4")
-FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "report", "figures")
+FIG_DIR = os.path.join(os.path.dirname(__file__), "..", "paper", "figures")
 BASE = os.path.join(os.path.dirname(__file__), "..", "results")
 TEST_REPLICATES = 3  # 16 eligible cells x 3 replicates = 48 held-out situations
 RUBRIC_FIELDS = rm.RUBRIC_FIELDS
