@@ -1,0 +1,8 @@
+{
+  "n_cells": 10,
+  "mean_js_div": 0.15115843763775338,
+  "mean_cosine_sim": 0.8046323750918403,
+  "argmax_agreement_rate": 0.8,
+  "mean_rubric_mae": 0.09696333333333333,
+  "mean_llm_latency_s": 2.7012364625930787
+}

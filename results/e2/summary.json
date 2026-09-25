@@ -1,0 +1,12 @@
+{
+  "n_cells": 10,
+  "max_iters": 4,
+  "tol": 0.05,
+  "mean_iterations": 1.3,
+  "convergence_rate": 1.0,
+  "mean_final_js_div": 0.01864002461532044,
+  "mean_final_cosine_sim": 0.9983310484216099,
+  "final_argmax_agreement_rate": 1.0,
+  "mean_final_rubric_mae": 0.05166666666666666,
+  "mean_total_latency_s": 4.05517098903656
+}

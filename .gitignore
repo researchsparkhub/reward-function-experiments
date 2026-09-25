@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artifacts (report.pdf is committed; intermediates are not)
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz

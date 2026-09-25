@@ -1,0 +1,4 @@
+numpy
+matplotlib
+scikit-learn
+anthropic>=0.120

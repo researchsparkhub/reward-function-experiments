@@ -1,0 +1,13 @@
+{
+  "n_train_pairs": 41,
+  "in_sample_rubric_mae": 0.08922937965790528,
+  "n_test_cells": 8,
+  "mean_rubric_mae_rm_vs_llm": 0.07601010259678553,
+  "mean_js_div_rm_vs_llm": 0.1876716500745349,
+  "mean_js_div_rm_vs_rule": 0.11616194113632736,
+  "mean_js_div_llm_vs_rule": 0.03036118925855017,
+  "argmax_agreement_rm_vs_llm": 0.25,
+  "mean_llm_latency_s": 2.5583488047122955,
+  "mean_rm_latency_s": 0.0010992586612701416,
+  "speedup_x": 2327.3401382675884
+}
