@@ -1,0 +1,76 @@
+\relax 
+\citation{sutton2018rl}
+\citation{amodei2016concrete}
+\citation{ma2024eureka,xie2024text2reward}
+\citation{christiano2017rlhf}
+\citation{zheng2023judging}
+\citation{ng1999shaping}
+\citation{amodei2016concrete}
+\citation{christiano2017rlhf}
+\citation{zheng2023judging}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{}\protected@file@percent }
+\newlabel{sec:intro}{{I}{1}{}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Previous Work}{1}{}\protected@file@percent }
+\newlabel{sec:related}{{II}{1}{}{section.2}{}}
+\citation{ma2024eureka}
+\citation{xie2024text2reward}
+\citation{chevalierboisvert2019babyai}
+\citation{chevalierboisvert2023minigrid}
+\citation{reimers2019sbert}
+\citation{schulman2017ppo}
+\citation{raffin2021sb3}
+\citation{ma2024eureka}
+\citation{xie2024text2reward}
+\citation{chevalierboisvert2023minigrid}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Novelty}{2}{}\protected@file@percent }
+\newlabel{sec:novelty}{{III}{2}{}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Contribution}{2}{}\protected@file@percent }
+\newlabel{sec:contribution}{{IV}{2}{}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Experimental Setup}{2}{}\protected@file@percent }
+\newlabel{sec:setup}{{V}{2}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Shared environment}{2}{}\protected@file@percent }
+\newlabel{subsec:env}{{\mbox  {V-A}}{2}{}{subsection.5.1}{}}
+\citation{ng1999shaping}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The shared $8\times 8$ gridworld. Dark cells are walls; the red disc is the target (``sofa''); orange discs are distractors (``chair'', ``cube''); the blue disc marks the agent's start cell.}}{3}{}\protected@file@percent }
+\newlabel{fig:env}{{1}{3}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}The rule-based policy}{3}{}\protected@file@percent }
+\newlabel{subsec:rule}{{\mbox  {V-B}}{3}{}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}The neural-network policy}{3}{}\protected@file@percent }
+\newlabel{subsec:nn}{{\mbox  {V-C}}{3}{}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}The LLM judge}{3}{}\protected@file@percent }
+\newlabel{subsec:judge}{{\mbox  {V-D}}{3}{}{subsection.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-E}}E1: zero-shot judge vs.\ rule-based policy}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-F}}E2: language and iterative refinement, rule-based reference}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-G}}E3: language and iterative refinement, neural-network reference}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-H}}E4: distilling a reward network}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Results and Analysis}{3}{}\protected@file@percent }
+\newlabel{sec:results}{{VI}{3}{}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}E1: rule-based policy vs.\ zero-shot LLM judge}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces E1: preferred action (arrow) at each sampled cell, rule-based policy (left) vs.\ zero-shot LLM judge (right), no instruction.}}{4}{}\protected@file@percent }
+\newlabel{fig:e1}{{2}{4}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}E2: language and iterative refinement toward the rule-based policy}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-C}}E3: language and iterative refinement toward an imperfect neural-network policy}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces E4: closeness rubric score, real LLM judge vs.\ distilled reward network, on all 48 held-out situations.}}{4}{}\protected@file@percent }
+\newlabel{fig:e4}{{3}{4}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-D}}E4: distilling the LLM judge into a reward network}{4}{}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{references}
+\bibcite{sutton2018rl}{1}
+\bibcite{amodei2016concrete}{2}
+\bibcite{ma2024eureka}{3}
+\bibcite{xie2024text2reward}{4}
+\bibcite{christiano2017rlhf}{5}
+\bibcite{zheng2023judging}{6}
+\bibcite{ng1999shaping}{7}
+\bibcite{chevalierboisvert2019babyai}{8}
+\bibcite{chevalierboisvert2023minigrid}{9}
+\bibcite{reimers2019sbert}{10}
+\bibcite{schulman2017ppo}{11}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Cross-experiment summary ($n=64$ for E1-E3, $n=48$ held-out for E4; brackets are 95\% CIs). ``Argmax agree.'' is the fraction of situations where the two compared policies pick the same best action; JS div.\ is the Jensen-Shannon divergence between their action distributions; rubric MAE is averaged over the closeness, avoided-damage, and path-efficiency fields.}}{5}{}\protected@file@percent }
+\newlabel{tab:summary}{{I}{5}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-E}}Analysis of results}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{5}{}\protected@file@percent }
+\newlabel{sec:conclusion}{{VII}{5}{}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{References}{5}{}\protected@file@percent }
+\bibcite{raffin2021sb3}{12}
+\gdef \@abspage@last{6}
