@@ -1,0 +1,212 @@
+\begin{thebibliography}{24}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Sutton and Barto(2018)]{sutton2018rl}
+Richard~S. Sutton and Andrew~G. Barto.
+\newblock \emph{Reinforcement Learning: An Introduction}.
+\newblock MIT Press, Cambridge, MA, USA, 2 edition, 2018.
+
+\bibitem[Amodei et~al.(2016)Amodei, Olah, Steinhardt, Christiano, Schulman, and
+  Man{\'e}]{amodei2016concrete}
+Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and
+  Dan Man{\'e}.
+\newblock Concrete problems in {AI} safety.
+\newblock \emph{arXiv preprint arXiv:1606.06565}, 2016.
+
+\bibitem[Ma et~al.(2024{\natexlab{a}})Ma, Liang, Wang, Huang, Bastani,
+  Jayaraman, Zhu, Fan, and Anandkumar]{ma2024eureka}
+Yecheng~Jason Ma, William Liang, Guanzhi Wang, De-An Huang, Osbert Bastani,
+  Dinesh Jayaraman, Yuke Zhu, Linxi Fan, and Anima Anandkumar.
+\newblock Eureka: Human-level reward design via coding large language models.
+\newblock In \emph{International Conference on Learning Representations},
+  2024{\natexlab{a}}.
+
+\bibitem[Xie et~al.(2024)Xie, Zhao, Wu, Liu, Luo, Zhong, Yang, and
+  Yu]{xie2024text2reward}
+Tianbao Xie, Siheng Zhao, Chen~Henry Wu, Yitao Liu, Qian Luo, Victor Zhong,
+  Yanchao Yang, and Tao Yu.
+\newblock {Text2Reward}: Reward shaping with language models for reinforcement
+  learning.
+\newblock In \emph{International Conference on Learning Representations}, 2024.
+
+\bibitem[Ma et~al.(2024{\natexlab{b}})Ma, Hejna, Wahid, Fu, Shah, Liang, Xu,
+  Kirmani, Xu, Driess, Xiao, Tompson, Bastani, Jayaraman, Yu, Zhang, Sadigh,
+  and Xia]{ma2024gvl}
+Yecheng~Jason Ma, Joey Hejna, Ayzaan Wahid, Chuyuan Fu, Dhruv Shah, Jacky
+  Liang, Zhuo Xu, Sean Kirmani, Peng Xu, Danny Driess, Ted Xiao, Jonathan
+  Tompson, Osbert Bastani, Dinesh Jayaraman, Wenhao Yu, Tingnan Zhang, Dorsa
+  Sadigh, and Fei Xia.
+\newblock Vision language models are in-context value learners.
+\newblock \emph{arXiv preprint arXiv:2411.04549}, 2024{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2411.04549}.
+
+\bibitem[Ng et~al.(1999)Ng, Harada, and Russell]{ng1999shaping}
+Andrew~Y. Ng, Daishi Harada, and Stuart Russell.
+\newblock Policy invariance under reward transformations: Theory and
+  application to reward shaping.
+\newblock In \emph{International Conference on Machine Learning}, pages
+  278--287, 1999.
+
+\bibitem[Chevalier-Boisvert et~al.(2019)Chevalier-Boisvert, Bahdanau, Lahlou,
+  Willems, Saharia, Nguyen, and Bengio]{chevalierboisvert2019babyai}
+Maxime Chevalier-Boisvert, Dzmitry Bahdanau, Salem Lahlou, Lucas Willems,
+  Chitwan Saharia, Thien~Huu Nguyen, and Yoshua Bengio.
+\newblock {BabyAI}: A platform to study the sample efficiency of grounded
+  language learning.
+\newblock In \emph{International Conference on Learning Representations}, 2019.
+
+\bibitem[Chevalier-Boisvert et~al.(2023)Chevalier-Boisvert, Dai, Towers,
+  de~Lazcano, Willems, Lahlou, Pal, Castro, and
+  Terry]{chevalierboisvert2023minigrid}
+Maxime Chevalier-Boisvert, Bolun Dai, Mark Towers, Rodrigo de~Lazcano, Lucas
+  Willems, Salem Lahlou, Suman Pal, Pablo~Samuel Castro, and Jordan Terry.
+\newblock {MiniGrid} \& {MiniWorld}: Modular \& customizable reinforcement
+  learning environments for goal-oriented tasks.
+\newblock \emph{CoRR}, abs/2306.13831, 2023.
+
+\bibitem[Lee et~al.(2026)Lee, Wagenmaker, Pertsch, Liang, Levine, and
+  Finn]{lee2026roboreward}
+Tony Lee, Andrew Wagenmaker, Karl Pertsch, Percy Liang, Sergey Levine, and
+  Chelsea Finn.
+\newblock {RoboReward}: General-purpose vision-language reward models for
+  robotics.
+\newblock \emph{arXiv preprint arXiv:2601.00675}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2601.00675}.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li,
+  Li, Xing, Zhang, Gonzalez, and Stoica]{zheng2023judging}
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao
+  Zhuang, Zi~Lin, Zhuohan Li, Dacheng Li, Eric~P. Xing, Hao Zhang, Joseph~E.
+  Gonzalez, and Ion Stoica.
+\newblock Judging {LLM}-as-a-judge with {MT-Bench} and chatbot arena.
+\newblock In \emph{Advances in Neural Information Processing Systems, Datasets
+  and Benchmarks Track}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2306.05685}.
+
+\bibitem[Tan et~al.(2025)Tan, Zhuang, Montgomery, Tang, Cuadron, Wang, Popa,
+  and Stoica]{tan2025judgebench}
+Sijun Tan, Siyuan Zhuang, Kyle Montgomery, William~Y. Tang, Alejandro Cuadron,
+  Chenguang Wang, Raluca~Ada Popa, and Ion Stoica.
+\newblock {JudgeBench}: A benchmark for evaluating {LLM}-based judges.
+\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/file/9e720fce64f91114c49cfd640d821da3-Paper-Conference.pdf}.
+
+\bibitem[Malik et~al.(2026)Malik, Pyatkin, Land, Morrison, Smith, Hajishirzi,
+  and Lambert]{malik2026rewardbench2}
+Saumya Malik, Valentina Pyatkin, Sander Land, Jacob Morrison, Noah~A. Smith,
+  Hannaneh Hajishirzi, and Nathan Lambert.
+\newblock {RewardBench 2}: Advancing reward model evaluation.
+\newblock In \emph{International Conference on Learning Representations}, 2026.
+\newblock URL \url{https://openreview.net/forum?id=fb0G86Dewb}.
+
+\bibitem[Stechly et~al.(2024)Stechly, Valmeekam, and
+  Kambhampati]{stechly2024selfverification}
+Kaya Stechly, Karthik Valmeekam, and Subbarao Kambhampati.
+\newblock On the self-verification limitations of large language models on
+  reasoning and planning tasks.
+\newblock \emph{arXiv preprint arXiv:2402.08115}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2402.08115}.
+
+\bibitem[Jiang et~al.(2026)Jiang, Luo, and Meng]{jiang2026lost}
+Yuhan Jiang, Peng Luo, and Liqiu Meng.
+\newblock Lost in aggregation: A multi-scale diagnostic benchmark for {LLM}
+  spatial navigation.
+\newblock \emph{arXiv preprint arXiv:2606.22219}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2606.22219}.
+
+\bibitem[Rodriguez~Salgado(2026)]{rodriguez2026pixels}
+Alberto~G. Rodriguez~Salgado.
+\newblock From pixels to {BFS}: High maze accuracy does not imply visual
+  planning.
+\newblock \emph{arXiv preprint arXiv:2603.26839}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2603.26839}.
+
+\bibitem[Kim(2026)]{kim2026judge}
+Donghwan Kim.
+\newblock {LLM}-as-a-judge scores are unreliable optimization signals in
+  closed-loop table recognition.
+\newblock \emph{arXiv preprint arXiv:2607.13347}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.13347}.
+
+\bibitem[Hariri et~al.(2026)Hariri, Chen, Shahini, Singh, Ye, Samandar,
+  Ganguly, Sankar, Zhang, Wang, Peng, Zhang, Hinczewski, and
+  Chaudhary]{hariri2026testtime}
+Mohsen Hariri, Weicong Chen, Nahal Shahini, Vikash Singh, Kai Ye, Amirhossein
+  Samandar, Debargha Ganguly, Sreehari Sankar, Yanyan Zhang, Shouren Wang,
+  Jerry Peng, Biyao Zhang, Michael Hinczewski, and Vipin Chaudhary.
+\newblock Test-time scaling in reasoning {LLM}s: Inference regimes, evaluation,
+  and reproducibility.
+\newblock \emph{arXiv preprint arXiv:2608.04001}, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.04001}.
+
+\bibitem[Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou]{wang2023selfconsistency}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc~V. Le, Ed~H. Chi, Sharan Narang,
+  Aakanksha Chowdhery, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language
+  models.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=1PL1NIMMrw}.
+
+\bibitem[Brown et~al.(2024)Brown, Juravsky, Ehrlich, Clark, Le, R\'{e}, and
+  Mirhoseini]{brown2024monkeys}
+Bradley Brown, Jordan Juravsky, Ryan Ehrlich, Ronald Clark, Quoc~V. Le,
+  Christopher R\'{e}, and Azalia Mirhoseini.
+\newblock Large language monkeys: Scaling inference compute with repeated
+  sampling.
+\newblock \emph{arXiv preprint arXiv:2407.21787}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.21787}.
+
+\bibitem[Geifman and El-Yaniv(2017)]{geifman2017selective}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2017/hash/4a8423d5e91fda00bb7e46540e2b0cf1-Abstract.html}.
+
+\bibitem[Kadavath et~al.(2022)Kadavath, Conerly, Askell, Henighan, Drain,
+  Perez, Schiefer, Hatfield-Dodds, DasSarma, Tran-Johnson, Johnston, El-Showk,
+  Jones, Elhage, Hume, Chen, Bai, Bowman, Fort, Ganguli, Hernandez, Jacobson,
+  Kernion, Kravec, Lovitt, Ndousse, Olsson, Ringer, Amodei, Brown, Clark,
+  Joseph, Mann, McCandlish, Olah, and Kaplan]{kadavath2022know}
+Saurav Kadavath, Tom Conerly, Amanda Askell, Tom Henighan, Dawn Drain, Ethan
+  Perez, Nicholas Schiefer, Zac Hatfield-Dodds, Nova DasSarma, Eli
+  Tran-Johnson, Scott Johnston, Sheer El-Showk, Andy Jones, Nelson Elhage,
+  Tristan Hume, Anna Chen, Yuntao Bai, Sam Bowman, Stanislav Fort, Deep
+  Ganguli, Danny Hernandez, Josh Jacobson, Jackson Kernion, Shauna Kravec,
+  Liane Lovitt, Kamal Ndousse, Catherine Olsson, Sam Ringer, Dario Amodei, Tom
+  Brown, Jack Clark, Nicholas Joseph, Ben Mann, Sam McCandlish, Chris Olah, and
+  Jared Kaplan.
+\newblock Language models (mostly) know what they know.
+\newblock \emph{arXiv preprint arXiv:2207.05221}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2207.05221}.
+
+\bibitem[Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and
+  Klimov]{schulman2017ppo}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock \emph{arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem[Schulman et~al.(2016)Schulman, Moritz, Levine, Jordan, and
+  Abbeel]{schulman2016gae}
+John Schulman, Philipp Moritz, Sergey Levine, Michael Jordan, and Pieter
+  Abbeel.
+\newblock High-dimensional continuous control using generalized advantage
+  estimation.
+\newblock In \emph{International Conference on Learning Representations}, 2016.
+
+\bibitem[Raffin et~al.(2021)Raffin, Hill, Gleave, Kanervisto, Ernestus, and
+  Dormann]{raffin2021sb3}
+Antonin Raffin, Ashley Hill, Adam Gleave, Anssi Kanervisto, Maximilian
+  Ernestus, and Noah Dormann.
+\newblock Stable-baselines3: Reliable reinforcement learning implementations.
+\newblock \emph{Journal of Machine Learning Research}, 22\penalty0
+  (268):\penalty0 1--8, 2021.
+
+\end{thebibliography}

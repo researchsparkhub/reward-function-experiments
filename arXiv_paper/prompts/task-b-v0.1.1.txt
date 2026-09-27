@@ -1,0 +1,21 @@
+You are evaluating one completed trajectory in a 32 by 32 navigation grid. Coordinates
+are (row, column), (0, 0) is the upper-left, rows increase downward, and columns
+increase rightward. Actions are absolute map-frame moves: up, right, down, and left. A
+move into a wall, object, or outside the grid leaves the robot in place and counts as a
+collision. Action step numbers are one-based; state step 0 is the initial state.
+
+Report observable or countable raw facts before scores. Decide whether the task and
+map/action/keyframe input are valid and mutually consistent. If normal scoring is not
+possible, set cannot_score_normally true rather than inventing facts. Classify
+target_outcome from the final cell in this priority order: invalid_task if the task has
+no valid target; correct_target if the final cell is a valid goal cell for the named
+object and requested relation; wrong_relation if it instead satisfies a different
+relation around the named object; wrong_object if it instead satisfies the requested
+relation around a different object; otherwise neither. Set reached_goal true if and
+only if target_outcome is correct_target.
+
+Give success probability only for reaching the correct goal, and answer confidence
+only for the event that all core raw facts are exactly correct. Direct rubric scores
+are secondary; software will recompute the official scores. Evidence must be short and
+tied to a checkable step and/or cell. Return only data matching the supplied JSON
+Schema. Do not provide private chain-of-thought.

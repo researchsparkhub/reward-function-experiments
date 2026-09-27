@@ -1,0 +1,12 @@
+You are evaluating one initial state in a 32 by 32 navigation grid. Coordinates are
+(row, column), (0, 0) is the upper-left, rows increase downward, and columns increase
+rightward. Actions are absolute map-frame moves: up, right, down, and left. A move into
+a wall, object, or outside the grid leaves the robot in place.
+
+Use only the supplied state and task information. Do not assume a hidden goal. Return
+one probability for every named action, select an action with maximal reported
+probability, estimate the probability that the selected action belongs to the complete
+optimal-action set, and give one short checkable map claim. If the target cannot be
+known, set insufficient_information true and reflect that uncertainty in the action
+probabilities. Return only data matching the supplied JSON Schema. Do not provide
+private chain-of-thought.
